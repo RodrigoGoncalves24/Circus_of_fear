@@ -1,0 +1,150 @@
+[gd_scene load_steps=20 format=3 uid="uid://der53w3qs2ant"]
+
+[ext_resource type="Texture2D" uid="uid://cds4ocyjk36iu" path="res://Personagem/personagem.png" id="1_gohld"]
+[ext_resource type="Script" uid="uid://bp77thugw76j3" path="res://crianca.gd" id="1_wbya0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbya0"]
+atlas = ExtResource("1_gohld")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx207"]
+atlas = ExtResource("1_gohld")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qg0o"]
+atlas = ExtResource("1_gohld")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5olvq"]
+atlas = ExtResource("1_gohld")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3a54"]
+atlas = ExtResource("1_gohld")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bpbq"]
+atlas = ExtResource("1_gohld")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8451a"]
+atlas = ExtResource("1_gohld")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqsxx"]
+atlas = ExtResource("1_gohld")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t20jq"]
+atlas = ExtResource("1_gohld")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk02m"]
+atlas = ExtResource("1_gohld")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llj7l"]
+atlas = ExtResource("1_gohld")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50pxv"]
+atlas = ExtResource("1_gohld")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1ohh"]
+atlas = ExtResource("1_gohld")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ni02"]
+atlas = ExtResource("1_gohld")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2dd1"]
+atlas = ExtResource("1_gohld")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8f4t"]
+atlas = ExtResource("1_gohld")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2pg2d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbya0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx207")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qg0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5olvq")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3a54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bpbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8451a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqsxx")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t20jq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk02m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llj7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50pxv")
+}],
+"loop": true,
+"name": &"Rigth",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1ohh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ni02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2dd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8f4t")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}]
+
+[node name="Crianca" type="CharacterBody2D"]
+position = Vector2(98, 60)
+script = ExtResource("1_wbya0")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2pg2d")
+animation = &"Up"
