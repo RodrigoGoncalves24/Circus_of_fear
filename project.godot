@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="Circus_of_Fear"
-run/main_scene="uid://g1ikartmkwb4"
+run/main_scene="uid://cp84g8w07pgbm"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
