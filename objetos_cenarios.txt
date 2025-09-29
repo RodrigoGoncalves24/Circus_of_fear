@@ -1,0 +1,35 @@
+Objetos de cena
+      criança
+            estilingue
+            bombinha
+            vida
+      monstros
+            zumbi
+            aranha
+            cobra
+            palhaço     
+      baú
+            munição
+            coração
+            chave
+      dicas - diminui medo
+            formas de derrotar inimigos
+HUD   
+      vida
+      medidor de medo
+      munições
+      qtd de dicas
+Cenário
+      parede
+      chão
+      decorações
+      luz
+      portas
+Fases
+
+Mecânicas
+      - Caminhar
+      - Atirar
+      - Abrir baú (sem baú funcionando)
+      - Passar de fase (pular de cenas)
+      - Bater nos outros (se atirar estiver funcionando ou tomar dano [piscar vermelho] se encostar no inimigo)
