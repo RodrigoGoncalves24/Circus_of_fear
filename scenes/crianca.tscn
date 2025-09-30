@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://der53w3qs2ant"]
 
-[ext_resource type="Texture2D" uid="uid://cds4ocyjk36iu" path="res://Personagem/personagem.png" id="1_gohld"]
-[ext_resource type="Script" uid="uid://bp77thugw76j3" path="res://Cenas/crianca.gd" id="1_wbya0"]
+[ext_resource type="Texture2D" uid="uid://cds4ocyjk36iu" path="res://texturas/personagem.png" id="1_gohld"]
+[ext_resource type="Script" uid="uid://ei4yqd215uc8" path="res://scripts/crianca.gd" id="1_wbya0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbya0"]
 atlas = ExtResource("1_gohld")

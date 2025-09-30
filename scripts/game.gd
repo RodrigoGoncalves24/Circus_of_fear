@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	#print(player.position.y, " ", scene_limit.position.y)
 	if player.position.x > scene_limit.position.x:
 		#get_tree().change_scene_to_file("res://Cenas/level_2.tscn")
-		call_deferred("goto_scene", "res://Cenas/level_2.tscn")
+		call_deferred("goto_scene", "res://scenes/level_2.tscn")
 				
 func goto_scene(path: String):
 	var qtd_filhos = get_child_count()

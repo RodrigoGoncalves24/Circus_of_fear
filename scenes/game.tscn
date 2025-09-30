@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c33idtjns1ytj"]
 
-[ext_resource type="Script" uid="uid://cbdmxsitskg8k" path="res://Cenas/game.gd" id="1_csek2"]
-[ext_resource type="PackedScene" uid="uid://cp84g8w07pgbm" path="res://Cenas/level_1.tscn" id="1_fd8wr"]
+[ext_resource type="Script" path="res://Cenas/game.gd" id="1_csek2"]
+[ext_resource type="PackedScene" uid="uid://cp84g8w07pgbm" path="res://scenes/level_1.tscn" id="1_fd8wr"]
 
 [sub_resource type="GDScript" id="GDScript_csek2"]
 script/source = "extends Node
@@ -13,9 +13,6 @@ script = ExtResource("1_csek2")
 [node name="Level" parent="." instance=ExtResource("1_fd8wr")]
 script = SubResource("GDScript_csek2")
 
-[node name="Camera2D" type="Camera2D" parent="Level"]
-position = Vector2(312, 146)
-zoom = Vector2(1.735, 1.735)
-
 [editable path="Level"]
+[editable path="Level/Cenario"]
 [editable path="Level/Crianca"]

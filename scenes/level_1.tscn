@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp84g8w07pgbm"]
+
+[ext_resource type="PackedScene" uid="uid://up5kojpefl5l" path="res://scenes/cenario.tscn" id="1_mnlen"]
+[ext_resource type="PackedScene" uid="uid://der53w3qs2ant" path="res://scenes/crianca.tscn" id="1_tpjal"]
+
+[node name="Level" type="Node"]
+
+[node name="Cenario" parent="." instance=ExtResource("1_mnlen")]
+
+[node name="Crianca" parent="." instance=ExtResource("1_tpjal")]
+position = Vector2(390, 126)
+
+[editable path="Crianca"]
