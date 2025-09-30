@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://der53w3qs2ant"]
+[gd_scene load_steps=21 format=3 uid="uid://der53w3qs2ant"]
 
 [ext_resource type="Texture2D" uid="uid://cds4ocyjk36iu" path="res://Personagem/personagem.png" id="1_gohld"]
-[ext_resource type="Script" uid="uid://bp77thugw76j3" path="res://crianca.gd" id="1_wbya0"]
+[ext_resource type="Script" uid="uid://bp77thugw76j3" path="res://Cenas/crianca.gd" id="1_wbya0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbya0"]
 atlas = ExtResource("1_gohld")
@@ -83,7 +83,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_5olvq")
 }],
 "loop": true,
-"name": &"Down",
+"name": &"down",
 "speed": 5.0
 }, {
 "frames": [{
@@ -100,7 +100,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_nqsxx")
 }],
 "loop": true,
-"name": &"Left",
+"name": &"left",
 "speed": 5.0
 }, {
 "frames": [{
@@ -117,7 +117,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_50pxv")
 }],
 "loop": true,
-"name": &"Rigth",
+"name": &"right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -134,17 +134,24 @@ animations = [{
 "texture": SubResource("AtlasTexture_v8f4t")
 }],
 "loop": true,
-"name": &"Up",
+"name": &"up",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2k80"]
+size = Vector2(39, 62)
+
 [node name="Crianca" type="CharacterBody2D"]
-position = Vector2(98, 60)
 script = ExtResource("1_wbya0")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2pg2d")
-animation = &"Up"
+animation = &"right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_s2k80")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.835, 1.835)

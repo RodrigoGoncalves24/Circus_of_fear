@@ -7,20 +7,22 @@ var current_scene = null
 
 func  _ready() -> void:
 	var qtd_filhos = get_child_count()
+	# Assumindo que o level é SEMPRE o último
+	# nodo da cena!
 	var level = get_child(qtd_filhos-1)
 	player = level.get_node("Crianca")
-	scene_limit = level.get_node("MarkerSaida")
-	print(player)
+	scene_limit = level.get_node("SceneLimit")
 	print(scene_limit)
 			
-func _physics_process(delta: float) -> void:	
+func _physics_process(delta: float) -> void:
 	if scene_limit == null:
-		scene_limit = current_scene.get_node("MarkerSaida")
+		scene_limit = current_scene.get_node("SceneLimit")
 		player = current_scene.get_node("Crianca")
-	print(player.position.y, " ", scene_limit.position.y)
-	if player.position.y > scene_limit.position.y:
-		get_tree().change_scene_to_file("res://scenes/level2.tscn")
-		
+	#print(player.position.y, " ", scene_limit.position.y)
+	if player.position.x > scene_limit.position.x:
+		#get_tree().change_scene_to_file("res://Cenas/level_2.tscn")
+		call_deferred("goto_scene", "res://Cenas/level_2.tscn")
+				
 func goto_scene(path: String):
 	var qtd_filhos = get_child_count()
 	print("Total children: "+str(qtd_filhos))
