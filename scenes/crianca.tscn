@@ -139,7 +139,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2k80"]
-size = Vector2(39, 62)
+size = Vector2(37, 58)
 
 [node name="Crianca" type="CharacterBody2D"]
 script = ExtResource("1_wbya0")
@@ -150,8 +150,5 @@ sprite_frames = SubResource("SpriteFrames_2pg2d")
 animation = &"right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 1)
+position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_s2k80")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.835, 1.835)

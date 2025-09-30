@@ -1,28 +1,60 @@
 extends Node2D
 
-var scene_limit: Marker2D
+var scene_limit_next: Marker2D
+var scene_limit_prev: Marker2D
 var player: CharacterBody2D
 
 var current_scene = null
+var current_level = 1
+var level_cleared = false
 
 func  _ready() -> void:
 	var qtd_filhos = get_child_count()
-	# Assumindo que o level é SEMPRE o último
-	# nodo da cena!
+	# Assumindo que o level é SEMPRE o último nodo da cena!
 	var level = get_child(qtd_filhos-1)
 	player = level.get_node("Crianca")
-	scene_limit = level.get_node("SceneLimit")
-	print(scene_limit)
+	if level.has_node("SceneLimitN"):
+		scene_limit_next = level.get_node("SceneLimitN")
+		print(scene_limit_next)
+	if level.has_node("SceneLimitP"):
+		scene_limit_prev = level.get_node("SceneLimitP")
+		print(scene_limit_prev)
+	print(player)
 			
 func _physics_process(delta: float) -> void:
-	if scene_limit == null:
-		scene_limit = current_scene.get_node("SceneLimit")
+	# Verificacao se a fase foi finalizada
+	if Input.is_action_just_pressed("level_cleared"):
+		level_cleared = true
+		print("Fase finalizada!")
+		# TODO Fazer algo em relacao com a colisao da porta	
+	
+	if scene_limit_next == null && scene_limit_prev == null:
+		# TODO Verificar se vai ser possível ou necessário voltar fases
+		# Proxima cena/fase
+		if current_scene.has_node("SceneLimitN"):
+			scene_limit_next = current_scene.get_node("SceneLimitN")
+			print(scene_limit_next)
+		# Cena/fase anterior
+		if current_scene.has_node("SceneLimitP"):
+			scene_limit_prev = current_scene.get_node("SceneLimitP")
+			print(scene_limit_prev)
 		player = current_scene.get_node("Crianca")
-	#print(player.position.y, " ", scene_limit.position.y)
-	if player.position.x > scene_limit.position.x:
-		#get_tree().change_scene_to_file("res://Cenas/level_2.tscn")
-		call_deferred("goto_scene", "res://scenes/level_2.tscn")
+		print(player)
+	if level_cleared:
+		# Se a fase foi finalizada, pode passar pra proxima
+		if scene_limit_next != null && player.position.x > scene_limit_next.position.x:
+			call_deferred("goto_scene", "res://scenes/level_" + str(switch_level(1)) + ".tscn")
+			print("Level: " + str(current_level))
+	if scene_limit_prev != null && player.position.x < scene_limit_prev.position.x:
+		call_deferred("goto_scene", "res://scenes/level_" + str(switch_level(-1)) + ".tscn")
+		print("Level: " + str(current_level))
 				
+func switch_level(qtd: int) -> int:
+	# Aumenta ou diminui o contador de fases e reseta a flag de fase finalizada
+	current_level += qtd
+	level_cleared = false
+	return current_level				
+
 func goto_scene(path: String):
 	var qtd_filhos = get_child_count()
 	print("Total children: "+str(qtd_filhos))
@@ -30,5 +62,6 @@ func goto_scene(path: String):
 	world.free()
 	var new_scene : PackedScene = ResourceLoader.load(path)
 	current_scene = new_scene.instantiate()
-	scene_limit = null # indica a troca de cena
+	scene_limit_next = null # indica a troca de cena
+	scene_limit_prev = null
 	get_tree().get_root().get_child(0).add_child(current_scene)  
