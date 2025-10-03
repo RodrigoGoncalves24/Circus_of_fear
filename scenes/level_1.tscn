@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://cp84g8w07pgbm"]
 
 [ext_resource type="PackedScene" uid="uid://der53w3qs2ant" path="res://scenes/crianca.tscn" id="1_tpjal"]
-[ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://texturas/tileset.tres" id="2_bswci"]
+[ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://Texturas/tileset.tres" id="2_bswci"]
 
 [node name="Level" type="Node"]
 
@@ -12,7 +12,7 @@ show_behind_parent = true
 visible = false
 position = Vector2(-30, 0)
 scale = Vector2(2.05, 2)
-polygon = PackedVector2Array(349.2683, 29, 349.2683, 0, 23.414635, 0, 23.414635, 206, 349.2683, 206, 349.2683, 68, 342.43903, 68, 342.43903, 199, 30.243904, 199, 30.243904, 16, 342.43903, 16, 342.43903, 29)
+polygon = PackedVector2Array(349.268, 29, 349.268, 0, 23.4146, 0, 23.4146, 206, 349.268, 206, 349.268, 68, 342.439, 68, 342.439, 199, 30.2439, 199, 30.2439, 16, 342.439, 16, 342.439, 29)
 
 [node name="TileMapLayer1" type="TileMapLayer" parent="Cenario"]
 show_behind_parent = true

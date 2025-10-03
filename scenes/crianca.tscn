@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://der53w3qs2ant"]
 
-[ext_resource type="Texture2D" uid="uid://cds4ocyjk36iu" path="res://texturas/personagem.png" id="1_gohld"]
+[ext_resource type="Texture2D" uid="uid://cds4ocyjk36iu" path="res://Texturas/personagem.png" id="1_gohld"]
 [ext_resource type="Script" uid="uid://ei4yqd215uc8" path="res://scripts/crianca.gd" id="1_wbya0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbya0"]
@@ -142,6 +142,7 @@ animations = [{
 size = Vector2(37, 58)
 
 [node name="Crianca" type="CharacterBody2D"]
+position = Vector2(72, 53)
 script = ExtResource("1_wbya0")
 metadata/_edit_group_ = true
 
@@ -152,3 +153,6 @@ animation = &"right"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_s2k80")
+
+[node name="PontoDisparo" type="Marker2D" parent="."]
+position = Vector2(0, 15)
