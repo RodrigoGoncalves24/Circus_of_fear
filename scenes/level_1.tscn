@@ -12,7 +12,7 @@ show_behind_parent = true
 visible = false
 position = Vector2(-30, 0)
 scale = Vector2(2.05, 2)
-polygon = PackedVector2Array(349.268, 29, 349.268, 0, 23.4146, 0, 23.4146, 206, 349.268, 206, 349.268, 68, 342.439, 68, 342.439, 199, 30.2439, 199, 30.2439, 16, 342.439, 16, 342.439, 29)
+polygon = PackedVector2Array(349.268, 29, 349.268, 0, 23.4146, 0, 23.4146, 206, 349.268, 206, 348.781, 64.5, 341.951, 64, 340.976, 192, 264.878, 192, 30.2439, 192, 30.2439, 16, 342.439, 16, 342.439, 29)
 
 [node name="TileMapLayer1" type="TileMapLayer" parent="Cenario"]
 show_behind_parent = true
@@ -37,7 +37,7 @@ position = Vector2(361, 206)
 zoom = Vector2(1.615, 1.615)
 
 [node name="SceneLimitN" type="Marker2D" parent="."]
-position = Vector2(715, 96)
+position = Vector2(700, 100)
 
 [node name="Crianca" parent="." instance=ExtResource("1_tpjal")]
 position = Vector2(94, 190)

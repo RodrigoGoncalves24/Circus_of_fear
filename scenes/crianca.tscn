@@ -139,10 +139,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2k80"]
-size = Vector2(37, 58)
+size = Vector2(36, 58)
 
 [node name="Crianca" type="CharacterBody2D"]
-position = Vector2(72, 53)
+position = Vector2(56, 74)
 script = ExtResource("1_wbya0")
 metadata/_edit_group_ = true
 
@@ -151,8 +151,8 @@ sprite_frames = SubResource("SpriteFrames_2pg2d")
 animation = &"right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 3)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_s2k80")
 
 [node name="PontoDisparo" type="Marker2D" parent="."]
-position = Vector2(0, 15)
+position = Vector2(-92, -34)
