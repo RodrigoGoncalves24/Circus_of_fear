@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://13ehaxgd4op2"]
+
+[ext_resource type="Script" uid="uid://cukhj0aswqemt" path="res://scripts/items/InventoryItem.gd" id="1_lakch"]
+[ext_resource type="Texture2D" uid="uid://b3gtmrj4jtlte" path="res://Texturas/Rocks.png" id="2_48tlc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r085v"]
+atlas = ExtResource("2_48tlc")
+region = Rect2(64, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_lakch")
+texture = SubResource("AtlasTexture_r085v")
+name = "Ammo"
+metadata/_custom_type_script = "uid://cukhj0aswqemt"

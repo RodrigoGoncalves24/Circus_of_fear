@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://d3l6i7t1fwwu3"]
+
+[ext_resource type="Script" uid="uid://cukhj0aswqemt" path="res://scripts/items/InventoryItem.gd" id="1_p4tq2"]
+[ext_resource type="Texture2D" uid="uid://co40qrwgdjpjl" path="res://Texturas/hearts.png" id="2_p4tq2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn83j"]
+atlas = ExtResource("2_p4tq2")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_p4tq2")
+texture = SubResource("AtlasTexture_tn83j")
+name = "Heart"
+metadata/_custom_type_script = "uid://cukhj0aswqemt"

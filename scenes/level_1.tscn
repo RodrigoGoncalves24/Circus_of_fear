@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=4 uid="uid://cp84g8w07pgbm"]
+[gd_scene load_steps=8 format=4 uid="uid://cp84g8w07pgbm"]
 
 [ext_resource type="PackedScene" uid="uid://der53w3qs2ant" path="res://scenes/crianca.tscn" id="1_tpjal"]
 [ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://Texturas/tileset.tres" id="2_bswci"]
+[ext_resource type="PackedScene" uid="uid://pigi6kmerpyx" path="res://scenes/chest.tscn" id="3_rus8k"]
+[ext_resource type="Script" uid="uid://cukhj0aswqemt" path="res://scripts/items/InventoryItem.gd" id="4_4nkto"]
+[ext_resource type="Resource" uid="uid://13ehaxgd4op2" path="res://scripts/items/ammo.tres" id="5_4nkto"]
+[ext_resource type="Resource" uid="uid://d3l6i7t1fwwu3" path="res://scripts/items/heart.tres" id="5_fcfvj"]
+[ext_resource type="Resource" uid="uid://vfoj7wg1cn7" path="res://scripts/items/key.tres" id="6_fcfvj"]
 
 [node name="Level" type="Node"]
 
@@ -41,3 +46,13 @@ position = Vector2(700, 100)
 
 [node name="Crianca" parent="." instance=ExtResource("1_tpjal")]
 position = Vector2(94, 190)
+
+[node name="Chest" parent="." instance=ExtResource("3_rus8k")]
+position = Vector2(311, 233)
+scale = Vector2(1.5, 1.5)
+items = Dictionary[ExtResource("4_4nkto"), int]({
+ExtResource("5_4nkto"): 5,
+ExtResource("6_fcfvj"): 1,
+ExtResource("5_fcfvj"): 1,
+null: 0
+})

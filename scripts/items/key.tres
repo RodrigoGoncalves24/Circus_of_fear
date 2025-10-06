@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://vfoj7wg1cn7"]
+
+[ext_resource type="Script" uid="uid://cukhj0aswqemt" path="res://scripts/items/InventoryItem.gd" id="1_7tiqq"]
+[ext_resource type="Texture2D" uid="uid://14od01lnj5yi" path="res://Texturas/New Piskel (9).png" id="2_q5lpq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpuwj"]
+atlas = ExtResource("2_q5lpq")
+region = Rect2(3, 0, 13, 20)
+
+[resource]
+script = ExtResource("1_7tiqq")
+texture = SubResource("AtlasTexture_rpuwj")
+name = "Key"
+metadata/_custom_type_script = "uid://cukhj0aswqemt"
