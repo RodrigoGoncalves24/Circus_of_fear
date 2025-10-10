@@ -1,12 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmdxft8utt8bc"]
+[gd_scene load_steps=4 format=3 uid="uid://bmdxft8utt8bc"]
 
-[ext_resource type="Script" uid="uid://clb0um2hq35ox" path="res://scripts/porta.gd" id="1_fctyj"]
+[ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://textures/tileset.tres" id="1_fctyj"]
+[ext_resource type="Script" uid="uid://dmgau2a80sbn5" path="res://scripts/porta.gd" id="1_hlcnn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bswci"]
-size = Vector2(14, 62)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlcnn"]
+size = Vector2(2.9268293, 16)
 
-[node name="Porta" type="Area2D"]
-script = ExtResource("1_fctyj")
+[node name="Porta" type="StaticBody2D"]
+script = ExtResource("1_hlcnn")
+
+[node name="Fechada" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 7, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 5, 0, 0, 0)
+tile_set = ExtResource("1_fctyj")
+
+[node name="Aberta" type="TileMapLayer" parent="."]
+visible = false
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 8, 0, 4, 0, 0, 96, 0, 0, 0, 0, 0, 0, 7, 0, 4, 0, 0, 96)
+tile_set = ExtResource("1_fctyj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_bswci")
+position = Vector2(3, 0)
+scale = Vector2(2.05, 2)
+shape = SubResource("RectangleShape2D_hlcnn")
