@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://pigi6kmerpyx"]
 
-[ext_resource type="Script" uid="uid://dyo4q0fsmln7x" path="res://scripts/chest.gd" id="1_sy5e1"]
-[ext_resource type="Texture2D" uid="uid://ccmqbqeivqabm" path="res://Texturas/RPG Chests.png" id="2_gqd3d"]
+[ext_resource type="Script" uid="uid://b71l1g44vifyn" path="res://scripts/chest.gd" id="1_sy5e1"]
+[ext_resource type="Texture2D" uid="uid://dgl2oieibx2qi" path="res://textures/RPG Chests.png" id="2_gqd3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yue2o"]
 size = Vector2(18, 11)
