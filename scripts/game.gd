@@ -1,13 +1,12 @@
 extends Node2D
 
-var scene_limit_next: Marker2D
-var scene_limit_prev: Marker2D
-var player: CharacterBody2D
-var porta: StaticBody2D
-var level: Node
+@onready var scene_limit_next: Marker2D
+@onready var scene_limit_prev: Marker2D
+@onready var player: CharacterBody2D = $Crianca
+@onready var level: Node
 
-var current_level = 1
-var level_cleared = false
+@onready var level_cleared = false
+@onready var current_level = 1
 
 func  _ready() -> void:
 	var qtd_filhos = get_child_count()
@@ -23,23 +22,8 @@ func  _ready() -> void:
 	print(player)
 			
 func _physics_process(delta: float) -> void:
-	# Verificacao se a fase foi finalizada
 	if Input.is_action_just_pressed("level_cleared"):
-		level_cleared = !level_cleared		
-		
-		# TODO Levar para porta.gd
-		porta = level.get_node("Cenario").get_node("Porta")
-		if level_cleared:
-			porta.get_node("Fechada").hide()
-			porta.get_node("Aberta").show()
-			porta.get_node("CollisionShape2D").set_deferred("disabled", true)
-			print("porta escondida")
-		else:
-			porta.get_node("Fechada").show()
-			porta.get_node("Aberta").hide()
-			porta.get_node("CollisionShape2D").set_deferred("disabled", false)
-			print("porta apareceu dnv")
-			
+		switch_level_status(!level_cleared)
 	if scene_limit_next == null && scene_limit_prev == null:
 		# TODO Verificar se vai ser possível ou necessário voltar fases
 		# Proxima cena/fase
@@ -61,11 +45,15 @@ func _physics_process(delta: float) -> void:
 			call_deferred("goto_scene", "res://scenes/level_" + str(switch_level(-1)) + ".tscn")
 			print("Level: " + str(current_level))
 				
+func switch_level_status(new_status: bool):
+	level_cleared = new_status
+	
 func switch_level(qtd: int) -> int:
 	# Aumenta ou diminui o contador de fases e reseta a flag de fase finalizada
 	current_level += qtd
-	level_cleared = false
-	return current_level				
+	if qtd < 0:
+		level_cleared = false
+	return current_level
 
 func goto_scene(path: String):
 	var qtd_filhos = get_child_count()
