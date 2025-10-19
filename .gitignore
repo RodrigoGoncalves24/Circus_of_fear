@@ -4,3 +4,5 @@
 *.tmp
 *.uid
 *.import
+*.vscode
+*.json
