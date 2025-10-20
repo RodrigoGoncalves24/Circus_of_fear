@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://der53w3qs2ant"]
+[gd_scene load_steps=24 format=3 uid="uid://der53w3qs2ant"]
 
-[ext_resource type="Texture2D" uid="uid://rt65qfq02luh" path="res://textures/personagem.png" id="1_gohld"]
+[ext_resource type="Texture2D" uid="uid://cbf7emi4m4l63" path="res://textures/personagem.png" id="1_gohld"]
 [ext_resource type="Script" uid="uid://ei4yqd215uc8" path="res://scripts/crianca.gd" id="1_wbya0"]
-[ext_resource type="Script" uid="uid://bylnejo0hgbr6" path="res://scripts/interaction_component.gd" id="3_hjrcj"]
+[ext_resource type="Script" uid="uid://dhehml2nlshui" path="res://scripts/interaction_component.gd" id="3_hjrcj"]
+[ext_resource type="PackedScene" uid="uid://cppiemoik38er" path="res://scenes/estilingue.tscn" id="4_xbjgo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbya0"]
 atlas = ExtResource("1_gohld")
@@ -143,30 +144,34 @@ animations = [{
 size = Vector2(36, 58)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xbjgo"]
-radius = 40.112343
+radius = 40.1123
 
 [node name="Crianca" type="CharacterBody2D"]
 script = ExtResource("1_wbya0")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2pg2d")
 animation = &"right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_s2k80")
 
-[node name="PontoDisparo" type="Marker2D" parent="."]
-position = Vector2(-92, -34)
+[node name="Node2D" parent="." instance=ExtResource("4_xbjgo")]
+position = Vector2(0, 17)
 
 [node name="InteractionComponent" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 2
 script = ExtResource("3_hjrcj")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionComponent"]
+visible = false
 shape = SubResource("CircleShape2D_xbjgo")
+
+[node name="shoot_colldown" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 
 [connection signal="body_entered" from="InteractionComponent" to="InteractionComponent" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionComponent" to="InteractionComponent" method="_on_body_exited"]

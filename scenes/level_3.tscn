@@ -1,18 +1,19 @@
 [gd_scene load_steps=3 format=4 uid="uid://jgvg76hbtq6m"]
 
-[ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://texturas/tileset.tres" id="1_h23n6"]
+[ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://textures/tileset.tres" id="1_h23n6"]
 [ext_resource type="PackedScene" uid="uid://der53w3qs2ant" path="res://scenes/crianca.tscn" id="2_uwxec"]
 
 [node name="Level" type="Node"]
 
 [node name="Cenario" type="StaticBody2D" parent="."]
 show_behind_parent = true
+collision_layer = 4
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Cenario"]
 visible = false
 position = Vector2(-30, 0)
 scale = Vector2(2.05, 2)
-polygon = PackedVector2Array(349.7561, 206, 349.2683, 0, 23.414635, 0, 23.414635, 125, 30.243904, 125, 30.243904, 16, 342.43903, 16, 342.43903, 192, 30.243904, 192, 30.243904, 162.5, 23.414635, 162.5, 23.414635, 206)
+polygon = PackedVector2Array(349.756, 206, 349.268, 0, 23.4146, 0, 23.4146, 125, 30.2439, 125, 30.2439, 16, 342.439, 16, 342.439, 192, 30.2439, 192, 30.2439, 162.5, 23.4146, 162.5, 23.4146, 206)
 
 [node name="TileMapLayer1" type="TileMapLayer" parent="Cenario"]
 show_behind_parent = true

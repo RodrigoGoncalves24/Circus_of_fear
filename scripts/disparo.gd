@@ -1,12 +1,10 @@
-extends Node2D
+extends Area2D
 
-@export var speed: float = 300.0
-var direction: Vector2 = Vector2.ZERO #Diz a direção do disparo
+@export var speed: int = 400
 
-func _process(delta: float) -> void:
-	position += direction *speed *delta
-
-func _on_body_entered(body):
-	queue_free() #Faz o disparo desaparecer após colidir
+func _process(delta):
+	position += transform.x * speed * delta
 	
-	
+#Ao sair da cena, ela deixa de existir
+func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
+	queue_free()
