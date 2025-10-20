@@ -64,6 +64,3 @@ position = Vector2(357, 116)
 [node name="Zumbi" parent="." instance=ExtResource("10_2y5yt")]
 position = Vector2(699, 243)
 up_direction = Vector2(0, 1)
-[node name="Zumbi" parent="." instance=ExtResource("10_2y5yt")]
-position = Vector2(357, 116)
-collision_layer = 1
