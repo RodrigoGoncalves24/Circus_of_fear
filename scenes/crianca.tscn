@@ -1,8 +1,8 @@
 [gd_scene load_steps=24 format=3 uid="uid://der53w3qs2ant"]
 
-[ext_resource type="Texture2D" uid="uid://cbf7emi4m4l63" path="res://textures/personagem.png" id="1_gohld"]
+[ext_resource type="Texture2D" uid="uid://rt65qfq02luh" path="res://textures/personagem.png" id="1_gohld"]
 [ext_resource type="Script" uid="uid://ei4yqd215uc8" path="res://scripts/crianca.gd" id="1_wbya0"]
-[ext_resource type="Script" uid="uid://dhehml2nlshui" path="res://scripts/interaction_component.gd" id="3_hjrcj"]
+[ext_resource type="Script" uid="uid://bylnejo0hgbr6" path="res://scripts/interaction_component.gd" id="3_hjrcj"]
 [ext_resource type="PackedScene" uid="uid://cppiemoik38er" path="res://scenes/estilingue.tscn" id="4_xbjgo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbya0"]
@@ -154,7 +154,6 @@ sprite_frames = SubResource("SpriteFrames_2pg2d")
 animation = &"right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_s2k80")
 
@@ -166,19 +165,12 @@ collision_layer = 0
 script = ExtResource("3_hjrcj")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionComponent"]
-visible = false
 shape = SubResource("CircleShape2D_xbjgo")
 
-<<<<<<< HEAD
 [node name="shoot_colldown" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
-=======
-<<<<<<< HEAD
-[node name="shoot_colldown" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-=======
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-0.020256042, 0.9948273)
 zoom = Vector2(1.8, 1.8)
@@ -187,8 +179,6 @@ limit_top = 0
 limit_right = 1088
 limit_bottom = 704
 limit_smoothed = true
->>>>>>> 4ce131963feac38efbe6c055317a3c2a726fad90
->>>>>>> 53fdda3090b5804cd464b38e3c8bbc761fd9b255
 
 [connection signal="body_entered" from="InteractionComponent" to="InteractionComponent" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionComponent" to="InteractionComponent" method="_on_body_exited"]

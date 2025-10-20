@@ -106,15 +106,10 @@ size = Vector2(40, 46)
 
 [node name="Zumbi" type="CharacterBody2D"]
 visibility_layer = 2
-<<<<<<< HEAD
 scale = Vector2(1.00754, 1)
 collision_layer = 4
 script = ExtResource("1_ijhqn")
 metadata/_edit_group_ = true
-=======
-collision_layer = 4
-script = ExtResource("1_ijhqn")
->>>>>>> 53fdda3090b5804cd464b38e3c8bbc761fd9b255
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 2

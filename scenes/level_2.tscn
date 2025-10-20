@@ -15,27 +15,12 @@ show_behind_parent = true
 light_mask = 2
 collision_layer = 4
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cenario"]
-visible = false
-position = Vector2(2, 32)
+[node name="LevelCollision" type="CollisionPolygon2D" parent="Cenario"]
+light_mask = 2
+visibility_layer = 4
+position = Vector2(3, 32)
 scale = Vector2(2.05, 2)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 53fdda3090b5804cd464b38e3c8bbc761fd9b255
-polygon = PackedVector2Array(349.268, 123, 349.268, 0, 23.4146, 0, 23.4146, 29, 30.2439, 29, 30.2439, 16, 342.439, 16, 342.439, 123)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Cenario"]
-visible = false
-position = Vector2(-30, 0)
-scale = Vector2(2.05, 2)
-polygon = PackedVector2Array(23.4146, 68, 23.4146, 206, 349.268, 205.5, 349.268, 163.5, 342.439, 163.5, 342.439, 192, 30.2439, 192, 30.2439, 68)
-<<<<<<< HEAD
-=======
-=======
-polygon = PackedVector2Array(-16.09756, -4.5, -16.09756, 64, -16.09756, 312, 529.7561, 311.5, 529.7561, 208, 482.92685, 208, 482.92685, 240, 498.5366, 240, 498.53662, 304, 123.90244, 304, 123.90244, 224, 217.56097, 224, 217.56097, 208.5, 123.90244, 208.5, 123.414635, 96, 45.85366, 96, 45.85366, 64, -11.707317, 64, -11.707317, 20.5, 45.85366, 20.5, 45.85366, 0, 326.3415, 0, 326.3415, 64, 498.53662, 64, 498.5366, 144, 482.92685, 144, 482.92685, 176, 529.7561, 176, 529.7561, -4)
->>>>>>> 4ce131963feac38efbe6c055317a3c2a726fad90
->>>>>>> 53fdda3090b5804cd464b38e3c8bbc761fd9b255
+polygon = PackedVector2Array(-17.560976, -4, -17.073172, 311, 534.1463, 311, 534.1463, 208, 482.43906, 208, 482.43906, 240, 498.0488, 240, 498.0488, 304, 123.902, 304, 123.902, 224, 217.561, 224, 217.56099, 208, 123.414635, 208, 123.415, 96, 45.365856, 96, 45.365856, 64, -6.8292685, 64, -6.8292685, 19.5, 45.365856, 19.5, 45.365856, 0, 326.341, 0, 326.341, 64, 498.0488, 64, 498.0488, 144, 482.43906, 144, 482.43906, 176, 534.1463, 176, 534.1463, -3.5)
 
 [node name="TileMapLayer1" type="TileMapLayer" parent="Cenario"]
 show_behind_parent = true

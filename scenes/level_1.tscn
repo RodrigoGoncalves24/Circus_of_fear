@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bmdxft8utt8bc" path="res://scenes/porta.tscn" id="2_15mv3"]
 [ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://textures/tileset.tres" id="2_bswci"]
 [ext_resource type="PackedScene" uid="uid://pigi6kmerpyx" path="res://scenes/chest.tscn" id="3_rus8k"]
-[ext_resource type="Script" uid="uid://b1w307s2kxfxu" path="res://scripts/items/InventoryItem.gd" id="4_4nkto"]
+[ext_resource type="Script" uid="uid://152h4obfqdmx" path="res://scripts/items/InventoryItem.gd" id="4_4nkto"]
 [ext_resource type="Resource" uid="uid://13ehaxgd4op2" path="res://scripts/items/ammo.tres" id="5_4nkto"]
 [ext_resource type="Resource" uid="uid://d3l6i7t1fwwu3" path="res://scripts/items/heart.tres" id="5_fcfvj"]
 [ext_resource type="Resource" uid="uid://vfoj7wg1cn7" path="res://scripts/items/key.tres" id="6_fcfvj"]
@@ -15,25 +15,12 @@
 [node name="Cenario" type="StaticBody2D" parent="."]
 show_behind_parent = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cenario"]
-visible = false
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 53fdda3090b5804cd464b38e3c8bbc761fd9b255
+[node name="LevelCollision" type="CollisionPolygon2D" parent="Cenario"]
 light_mask = 2
 visibility_layer = 4
-position = Vector2(-30, 0)
+position = Vector2(3, 32)
 scale = Vector2(2.05, 2)
-polygon = PackedVector2Array(23.4146, -4, 23.4146, 311, 505.366, 311, 505.366, 208, 498.537, 208, 498.537, 304, 123.902, 304, 123.902, 224, 217.561, 224, 217.561, 208.5, 123.902, 208.5, 123.415, 96, 30.2439, 96, 30.2439, 0, 326.341, 0, 326.341, 64, 498.537, 64, 498.537, 176, 505.366, 176, 505.366, -4)
-<<<<<<< HEAD
-=======
-=======
-position = Vector2(2, 32)
-scale = Vector2(2.05, 2)
-polygon = PackedVector2Array(23.414635, -4, 23.414635, 311, 529.7561, 311.5, 529.7561, 208, 482.92685, 208, 482.92685, 240, 498.5366, 240, 498.53662, 304, 123.90244, 304, 123.90244, 224, 217.56097, 224, 217.56097, 208.5, 123.90244, 208.5, 123.414635, 96, 30.243904, 96, 30.243904, 0, 326.3415, 0, 326.3415, 64, 498.53662, 64, 498.5366, 144, 482.92685, 144, 482.92685, 176, 529.7561, 176, 529.7561, -4)
->>>>>>> 4ce131963feac38efbe6c055317a3c2a726fad90
->>>>>>> 53fdda3090b5804cd464b38e3c8bbc761fd9b255
+polygon = PackedVector2Array(23.4146, -4, 23.4146, 311, 534.1463, 311, 534.1463, 208, 482.43906, 208, 482.43906, 240, 498.0488, 240, 498.0488, 304, 123.902, 304, 123.902, 224, 217.561, 224, 217.561, 208.5, 123.902, 208.5, 123.415, 96, 30.2439, 96, 30.2439, 0, 326.341, 0, 326.341, 64, 498.0488, 64, 498.0488, 144, 482.43906, 144, 482.43906, 176, 534.1463, 176, 534.1463, -3.5)
 
 [node name="TileMapLayer1" type="TileMapLayer" parent="Cenario"]
 show_behind_parent = true
@@ -57,28 +44,12 @@ tile_set = ExtResource("2_bswci")
 position = Vector2(993, 416)
 scale = Vector2(2, 2)
 
-<<<<<<< HEAD
-[node name="SceneLimitN" type="Marker2D" parent="."]
-position = Vector2(1051, 383)
-
 [node name="Crianca" parent="." instance=ExtResource("1_tpjal")]
 position = Vector2(113.945, 109.919)
 scale = Vector2(0.75, 0.75)
 
-[node name="Camera2D" type="Camera2D" parent="Crianca"]
-position = Vector2(-0.020256, 0.994827)
-zoom = Vector2(1.8, 1.8)
-limit_left = -30
-limit_top = -32
-limit_right = 1055
-limit_bottom = 670
-
 [node name="Chest" parent="." instance=ExtResource("3_rus8k")]
 position = Vector2(291, 549)
-=======
-[node name="Chest" parent="Cenario" instance=ExtResource("3_rus8k")]
-position = Vector2(322.49057, 574.4916)
->>>>>>> 4ce131963feac38efbe6c055317a3c2a726fad90
 scale = Vector2(1.5, 1.5)
 items = Dictionary[ExtResource("4_4nkto"), int]({
 null: 0,
@@ -87,16 +58,5 @@ ExtResource("6_fcfvj"): 1,
 ExtResource("5_fcfvj"): 1
 })
 
-<<<<<<< HEAD
 [node name="Zumbi" parent="." instance=ExtResource("10_2y5yt")]
 position = Vector2(357, 116)
-=======
-<<<<<<< HEAD
-[node name="Zumbi" parent="." instance=ExtResource("10_2y5yt")]
-position = Vector2(357, 116)
-=======
-[node name="Crianca" parent="." instance=ExtResource("1_tpjal")]
-position = Vector2(169.2, 143.80002)
-scale = Vector2(0.75, 0.75)
->>>>>>> 4ce131963feac38efbe6c055317a3c2a726fad90
->>>>>>> 53fdda3090b5804cd464b38e3c8bbc761fd9b255
