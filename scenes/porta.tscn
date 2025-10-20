@@ -1,12 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmdxft8utt8bc"]
 
 [ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://textures/tileset.tres" id="1_fctyj"]
-[ext_resource type="Script" uid="uid://dmgau2a80sbn5" path="res://scripts/porta.gd" id="1_hlcnn"]
+[ext_resource type="Script" uid="uid://bkrdeaeisi6vw" path="res://scripts/porta.gd" id="1_hlcnn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hlcnn"]
-size = Vector2(2.9268293, 16)
+size = Vector2(2.92683, 16)
 
 [node name="Porta" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_hlcnn")
 
 [node name="Fechada" type="TileMapLayer" parent="."]

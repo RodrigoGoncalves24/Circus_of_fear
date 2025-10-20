@@ -1,21 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd31j3g61soof"]
+[gd_scene load_steps=4 format=3 uid="uid://bapd046yk7qtx"]
 
-[ext_resource type="Script" uid="uid://btd5h3x85pidc" path="res://scripts/disparo.gd" id="1_6jt3u"]
-[ext_resource type="Texture2D" uid="uid://mfujwa2odv44" path="res://icon.svg" id="2_leoo1"]
+[ext_resource type="Script" uid="uid://dgnfndbwiofhq" path="res://scripts/disparo.gd" id="1_qxw2w"]
+[ext_resource type="Texture2D" uid="uid://ca3b8uswck2kj" path="res://textures/Rocks.png" id="2_6jt3u"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6jt3u"]
-radius = 7.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_leoo1"]
+radius = 8.544
 
-[node name="Node2D" type="Node2D"]
-position = Vector2(4, -2)
-script = ExtResource("1_6jt3u")
+[node name="Area2D" type="Area2D" groups=["bullets"]]
+light_mask = 4
+script = ExtResource("1_qxw2w")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(92, 42)
-scale = Vector2(0.078125, 0.078125)
-texture = ExtResource("2_leoo1")
+position = Vector2(-1.40331, 1.6709)
+scale = Vector2(0.486187, 0.410908)
+texture = ExtResource("2_6jt3u")
+region_enabled = true
+region_rect = Rect2(1, 1, 14, 13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(92, 42)
-shape = SubResource("CircleShape2D_6jt3u")
+visible = false
+shape = SubResource("CircleShape2D_leoo1")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(-1.5, 2)
+scale = Vector2(0.45, 0.4)
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
