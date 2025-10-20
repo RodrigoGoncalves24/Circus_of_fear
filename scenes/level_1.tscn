@@ -60,3 +60,4 @@ ExtResource("5_fcfvj"): 1
 
 [node name="Zumbi" parent="." instance=ExtResource("10_2y5yt")]
 position = Vector2(357, 116)
+collision_layer = 1

@@ -11,7 +11,6 @@ size = Vector2(11.931335, 112)
 
 [node name="Cenario" type="StaticBody2D" parent="."]
 show_behind_parent = true
-collision_layer = 4
 
 [node name="LevelCollision" type="CollisionPolygon2D" parent="Cenario"]
 light_mask = 2
