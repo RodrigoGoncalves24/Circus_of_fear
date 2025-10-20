@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmdxft8utt8bc"]
+[gd_scene load_steps=5 format=3 uid="uid://bmdxft8utt8bc"]
 
 [ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://textures/tileset.tres" id="1_fctyj"]
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://bkrdeaeisi6vw" path="res://scripts/porta.gd" id="1_hlcnn"]
+=======
+[ext_resource type="Script" uid="uid://ycvp2737mqku" path="res://scripts/porta.gd" id="1_hlcnn"]
+>>>>>>> 4ce131963feac38efbe6c055317a3c2a726fad90
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hlcnn"]
 size = Vector2(2.92683, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwxfp"]
+size = Vector2(5, 64)
 
 [node name="Porta" type="StaticBody2D"]
 collision_layer = 4
@@ -20,7 +27,14 @@ visible = false
 tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 8, 0, 4, 0, 0, 96, 0, 0, 0, 0, 0, 0, 7, 0, 4, 0, 0, 96)
 tile_set = ExtResource("1_fctyj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="ColisaoPorta" type="CollisionShape2D" parent="."]
 position = Vector2(3, 0)
 scale = Vector2(2.05, 2)
 shape = SubResource("RectangleShape2D_hlcnn")
+
+[node name="SceneLimit" type="Area2D" parent="."]
+position = Vector2(50, 0)
+
+[node name="ZonaLimite" type="CollisionShape2D" parent="SceneLimit"]
+position = Vector2(0.040901184, -0.0061383247)
+shape = SubResource("RectangleShape2D_rwxfp")

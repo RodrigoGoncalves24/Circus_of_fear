@@ -169,9 +169,20 @@ script = ExtResource("3_hjrcj")
 visible = false
 shape = SubResource("CircleShape2D_xbjgo")
 
+<<<<<<< HEAD
 [node name="shoot_colldown" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+=======
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-0.020256042, 0.9948273)
+zoom = Vector2(1.8, 1.8)
+limit_left = 0
+limit_top = 0
+limit_right = 1088
+limit_bottom = 704
+limit_smoothed = true
+>>>>>>> 4ce131963feac38efbe6c055317a3c2a726fad90
 
 [connection signal="body_entered" from="InteractionComponent" to="InteractionComponent" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionComponent" to="InteractionComponent" method="_on_body_exited"]
