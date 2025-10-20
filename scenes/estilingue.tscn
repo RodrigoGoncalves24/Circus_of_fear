@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cppiemoik38er"]
 
-[ext_resource type="Script" uid="uid://ci4iepf4x6nfm" path="res://scripts/estilingue.gd" id="1_vgbqw"]
-[ext_resource type="Texture2D" uid="uid://o6lh3s51btjb" path="res://textures/estiligue.png" id="2_vgbqw"]
+[ext_resource type="Script" uid="uid://bl0wbedc4aheg" path="res://scripts/estilingue.gd" id="1_vgbqw"]
+[ext_resource type="Texture2D" uid="uid://bqvbnph5ie83" path="res://textures/estiligue.png" id="2_vgbqw"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vgbqw")
