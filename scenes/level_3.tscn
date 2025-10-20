@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://jgvg76hbtq6m"]
+[gd_scene load_steps=6 format=4 uid="uid://jgvg76hbtq6m"]
 
 [ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://textures/tileset.tres" id="1_h23n6"]
 [ext_resource type="PackedScene" uid="uid://der53w3qs2ant" path="res://scenes/crianca.tscn" id="2_uwxec"]
 [ext_resource type="PackedScene" uid="uid://pigi6kmerpyx" path="res://scenes/chest.tscn" id="4_1pn4d"]
+[ext_resource type="PackedScene" uid="uid://7xxut8dm6l3j" path="res://scenes/zumbi.tscn" id="4_ah8om"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwxec"]
 size = Vector2(11.931335, 112)
@@ -38,7 +39,7 @@ tile_map_data = PackedByteArray("AAASAAEAAAAEAAcAAAAFAAEAAAAEAAcAAAAIAAEAAAAAAAk
 tile_set = ExtResource("1_h23n6")
 
 [node name="Chest" parent="Cenario" instance=ExtResource("4_1pn4d")]
-position = Vector2(921, 536)
+position = Vector2(894, 512)
 
 [node name="SceneLimitPrev" type="Area2D" parent="Cenario"]
 position = Vector2(-6, 120)
@@ -50,3 +51,7 @@ shape = SubResource("RectangleShape2D_uwxec")
 [node name="Crianca" parent="." instance=ExtResource("2_uwxec")]
 position = Vector2(173, 139)
 scale = Vector2(0.75, 0.75)
+
+[node name="Zumbi" parent="." instance=ExtResource("4_ah8om")]
+position = Vector2(667, 376.99997)
+scale = Vector2(1.923, 1.908)

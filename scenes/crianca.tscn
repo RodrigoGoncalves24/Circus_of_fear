@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://der53w3qs2ant"]
+[gd_scene load_steps=28 format=3 uid="uid://der53w3qs2ant"]
 
 [ext_resource type="Texture2D" uid="uid://rt65qfq02luh" path="res://textures/personagem.png" id="1_gohld"]
 [ext_resource type="Script" uid="uid://ei4yqd215uc8" path="res://scripts/crianca.gd" id="1_wbya0"]
 [ext_resource type="Script" uid="uid://bylnejo0hgbr6" path="res://scripts/interaction_component.gd" id="3_hjrcj"]
 [ext_resource type="PackedScene" uid="uid://cppiemoik38er" path="res://scenes/estilingue.tscn" id="4_xbjgo"]
+[ext_resource type="Texture2D" uid="uid://7eu4eh0srhvf" path="res://textures/hearts.png" id="5_vruit"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbya0"]
 atlas = ExtResource("1_gohld")
@@ -146,12 +147,59 @@ size = Vector2(36, 58)
 [sub_resource type="CircleShape2D" id="CircleShape2D_xbjgo"]
 radius = 40.1123
 
-[node name="Crianca" type="CharacterBody2D"]
+[sub_resource type="Animation" id="Animation_vruit"]
+resource_name = "damage to player"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.020334376),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0.5019608), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tn6hh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tn6hh"]
+_data = {
+&"RESET": SubResource("Animation_tn6hh"),
+&"damage to player": SubResource("Animation_vruit")
+}
+
+[node name="Crianca" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_wbya0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+clip_children = 2
 sprite_frames = SubResource("SpriteFrames_2pg2d")
 animation = &"right"
+
+[node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D"]
+offset_left = -85.0
+offset_top = -78.0
+offset_right = 73.0
+offset_bottom = 76.0
+color = Color(1, 0, 0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
@@ -171,6 +219,52 @@ shape = SubResource("CircleShape2D_xbjgo")
 wait_time = 5.0
 one_shot = true
 
+[node name="health_bar" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="health_bar"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="heart" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(37, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart"]
+position = Vector2(19, 13)
+scale = Vector2(2.415, 2.415)
+texture = ExtResource("5_vruit")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="heart2" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(37, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart2"]
+position = Vector2(19, 13)
+scale = Vector2(2.415, 2.415)
+texture = ExtResource("5_vruit")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="heart3" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(37, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart3"]
+position = Vector2(19, 13)
+scale = Vector2(2.415, 2.415)
+texture = ExtResource("5_vruit")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="damage" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tn6hh")
+}
+
+[node name="hurt_timer" type="Timer" parent="."]
+one_shot = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-0.020256042, 0.9948273)
 zoom = Vector2(1.8, 1.8)
