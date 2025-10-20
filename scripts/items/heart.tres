@@ -11,4 +11,3 @@ region = Rect2(0, 0, 16, 16)
 script = ExtResource("1_p4tq2")
 texture = SubResource("AtlasTexture_tn83j")
 name = "Heart"
-metadata/_custom_type_script = "uid://cukhj0aswqemt"

@@ -102,7 +102,7 @@ animations = [{
 size = Vector2(40, 45.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qonaf"]
-size = Vector2(40, 46)
+size = Vector2(74, 48)
 
 [node name="Zumbi" type="CharacterBody2D"]
 visibility_layer = 2
@@ -116,8 +116,6 @@ scale = Vector2(0.134884, 0.0973025)
 sprite_frames = SubResource("SpriteFrames_s6dug")
 animation = &"rigth"
 autoplay = "rigth"
-frame = 9
-frame_progress = 0.0293484
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4.75)
@@ -133,6 +131,6 @@ target_position = Vector2(11, 0)
 position = Vector2(-101, 15)
 
 [node name="collision" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(101, -20)
+position = Vector2(102, -20)
 shape = SubResource("RectangleShape2D_qonaf")
 debug_color = Color(0.853333, 0.354964, 0.279595, 0.42)
