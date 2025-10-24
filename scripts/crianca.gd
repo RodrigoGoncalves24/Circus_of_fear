@@ -68,4 +68,5 @@ func update_heart_display():
 func die():
 	is_dead = true
 	print("O jogador morreu!")
+	Input.set_custom_mouse_cursor(load("res://textures/pointer.png"))
 	get_tree().change_scene_to_file("res://scenes/gameover.tscn")

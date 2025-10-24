@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://byhahyf15uv1j"]
+
+[ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="2_tdf2h"]
+[ext_resource type="Texture2D" uid="uid://beq1n1r83tfbc" path="res://textures/wasd.png" id="3_tdf2h"]
+[ext_resource type="Script" uid="uid://cpa54x3is406r" path="res://scripts/button_controles_voltar.gd" id="4_tdf2h"]
+[ext_resource type="Texture2D" uid="uid://cu50fs10w0uym" path="res://textures/mouse.png" id="4_y8bqw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dy3ie"]
+font = ExtResource("2_tdf2h")
+font_size = 300
+font_color = Color(0.6877407, 0.6082873, 0.60804355, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdf2h"]
+bg_color = Color(0.22706568, 0.12724975, 0.1651349, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8bqw"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v15ka"]
+bg_color = Color(0.36034617, 0.21654785, 0.2722447, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Controles" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+color = Color(0.14509805, 0.07450981, 0.101960786, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 81.0
+offset_right = 963.0
+offset_bottom = 251.0
+text = "Controles"
+label_settings = SubResource("LabelSettings_dy3ie")
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(325.5, 405)
+texture = ExtResource("3_tdf2h")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ColorRect"]
+position = Vector2(796.5, 408)
+texture = ExtResource("4_y8bqw")
+
+[node name="Voltar" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 533.0
+offset_right = 875.0
+offset_bottom = 598.0
+theme_override_colors/font_color = Color(0.6862745, 0.60784316, 0.60784316, 1)
+theme_override_fonts/font = ExtResource("2_tdf2h")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_tdf2h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y8bqw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v15ka")
+text = "Voltar"
+script = ExtResource("4_tdf2h")

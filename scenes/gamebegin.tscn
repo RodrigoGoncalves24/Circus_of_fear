@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvdyj3uieok3l"]
+
+[ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="2_26yjs"]
+[ext_resource type="Script" uid="uid://dsgoyxi4v25lm" path="res://scripts/button_jogar.gd" id="3_eoium"]
+[ext_resource type="Script" uid="uid://dcwgmk1kvmu1r" path="res://scripts/button_controles.gd" id="4_26yjs"]
+[ext_resource type="Script" uid="uid://ckdlv5wy1rp4s" path="res://scripts/button_sair.gd" id="5_eoium"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dy3ie"]
+font = ExtResource("2_26yjs")
+font_size = 300
+font_color = Color(0.6877407, 0.6082873, 0.60804355, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mkfd"]
+bg_color = Color(0.22706568, 0.12724975, 0.1651349, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8i2o"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy3ie"]
+bg_color = Color(0.36034617, 0.21654785, 0.2722447, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Game Begin" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+color = Color(0.14509805, 0.07450981, 0.101960786, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 122.0
+offset_right = 962.0
+offset_bottom = 292.0
+text = "Circus of Fear"
+label_settings = SubResource("LabelSettings_dy3ie")
+horizontal_alignment = 1
+
+[node name="Jogar" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 314.0
+offset_right = 873.0
+offset_bottom = 379.0
+theme_override_colors/font_color = Color(0.6862745, 0.60784316, 0.60784316, 1)
+theme_override_fonts/font = ExtResource("2_26yjs")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_2mkfd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
+text = "Jogar"
+script = ExtResource("3_eoium")
+
+[node name="Controles" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 389.0
+offset_right = 873.0
+offset_bottom = 454.0
+theme_override_colors/font_color = Color(0.6862745, 0.60784316, 0.60784316, 1)
+theme_override_fonts/font = ExtResource("2_26yjs")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_2mkfd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
+text = "Controles"
+script = ExtResource("4_26yjs")
+
+[node name="Sair" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 466.0
+offset_right = 873.0
+offset_bottom = 531.0
+theme_override_colors/font_color = Color(0.6862745, 0.60784316, 0.60784316, 1)
+theme_override_fonts/font = ExtResource("2_26yjs")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_2mkfd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
+text = "Sair"
+script = ExtResource("5_eoium")

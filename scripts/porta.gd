@@ -6,9 +6,13 @@ var player: CharacterBody2D
 @onready var aberta = $Aberta
 @onready var collider = $ColisaoPorta
 @onready var scene_limit = $SceneLimit
+@onready var scene_limit_prev
 
 func _ready() -> void:
 	scene_limit.connect("body_entered", Callable(self, "_on_scene_limit_entered"))
+	if $SceneLimitPrev:
+		scene_limit_prev = $SceneLimitPrev
+		scene_limit_prev.connect("body_entered", Callable(self, "_on_scene_limit_prev_entered"))
 
 func _physics_process(delta):
 	if game and game.level_cleared:
@@ -28,4 +32,8 @@ func fechar_porta():
 
 func _on_scene_limit_entered(body):
 	if game and game.level_cleared:
-		game.mudar_para_proxima_fase()
+		game.proxima_fase()
+
+func _on_scene_limit_prev_entered(body):
+	if game:
+		game.fase_anterior()

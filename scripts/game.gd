@@ -7,6 +7,7 @@ extends Node2D
 @onready var current_level = 1
 
 func  _ready() -> void:
+	Input.set_custom_mouse_cursor(load("res://textures/mira.png"))
 	var qtd_filhos = get_child_count()
 	# Assumindo que o level é SEMPRE o último nodo da cena!
 	level = get_child(qtd_filhos-1)
@@ -18,13 +19,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("level_cleared"):
 		switch_level_status(!level_cleared)
 	
-func mudar_para_proxima_fase():
-	print("Mudando de cena...")
+func proxima_fase():
 	call_deferred("goto_scene", "res://scenes/level_" + str(switch_level(1)) + ".tscn")
 	print("Level: " + str(current_level))
 	
-func mudar_para_fase_anterior():
-	print("Mudando de cena...")
+func fase_anterior():
 	call_deferred("goto_scene", "res://scenes/level_" + str(switch_level(-1)) + ".tscn")
 	print("Level: " + str(current_level))
 	
@@ -34,8 +33,9 @@ func switch_level_status(new_status: bool):
 	
 func switch_level(qtd: int) -> int:
 	# Aumenta ou diminui o contador de fases e reseta a flag de fase finalizada
+	if qtd > 0:
+		level_cleared = false
 	current_level += qtd
-	level_cleared = false
 	return current_level
 
 func goto_scene(path: String):

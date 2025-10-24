@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://7xxut8dm6l3j"]
 
-[ext_resource type="Script" uid="uid://c0h2645dpjtp1" path="res://scripts/zumbi.gd" id="1_ijhqn"]
+[ext_resource type="Script" uid="uid://dxjx8ymv22qwn" path="res://scripts/zumbi.gd" id="1_ijhqn"]
 [ext_resource type="Texture2D" uid="uid://dnxd0d34nkocd" path="res://textures/png/male/Attack (1).png" id="2_uq6ot"]
 [ext_resource type="PackedScene" uid="uid://bqslmhyyw4av2" path="res://scenes/hitbox.tscn" id="3_32ssj"]
 [ext_resource type="Texture2D" uid="uid://cke45fxuot4b5" path="res://textures/png/male/Walk (2).png" id="3_sqbqa"]

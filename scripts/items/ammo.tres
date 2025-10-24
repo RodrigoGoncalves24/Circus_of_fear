@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://13ehaxgd4op2"]
 
-[ext_resource type="Script" uid="uid://152h4obfqdmx" path="res://scripts/items/InventoryItem.gd" id="1_lakch"]
+[ext_resource type="Script" uid="uid://152h4obfqdmx" path="res://scripts/items/inventoryItem.gd" id="1_lakch"]
 [ext_resource type="Texture2D" uid="uid://donoqp5yvk8he" path="res://textures/Rocks.png" id="2_48tlc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r085v"]
