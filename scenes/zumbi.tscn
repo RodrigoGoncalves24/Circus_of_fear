@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://7xxut8dm6l3j"]
+[gd_scene load_steps=30 format=3 uid="uid://7xxut8dm6l3j"]
 
 [ext_resource type="Script" uid="uid://dxjx8ymv22qwn" path="res://scripts/zumbi.gd" id="1_ijhqn"]
 [ext_resource type="Texture2D" uid="uid://dnxd0d34nkocd" path="res://textures/png/male/Attack (1).png" id="2_uq6ot"]
@@ -104,6 +104,45 @@ size = Vector2(40, 45.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qonaf"]
 size = Vector2(74, 48)
 
+[sub_resource type="Animation" id="Animation_xwbqf"]
+resource_name = "damage_to_zombie"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0.5019608), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uq6ot"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sqbqa"]
+_data = {
+&"RESET": SubResource("Animation_uq6ot"),
+&"damage_to_zombie": SubResource("Animation_xwbqf")
+}
+
 [node name="Zumbi" type="CharacterBody2D"]
 visibility_layer = 2
 scale = Vector2(1.00754, 1)
@@ -111,12 +150,20 @@ script = ExtResource("1_ijhqn")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+clip_children = 2
 visibility_layer = 2
 position = Vector2(3, -7)
 scale = Vector2(0.134884, 0.0973025)
 sprite_frames = SubResource("SpriteFrames_s6dug")
 animation = &"rigth"
 autoplay = "rigth"
+
+[node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D"]
+offset_left = -344.7
+offset_top = -308.984
+offset_right = 317.3802
+offset_bottom = 347.64966
+color = Color(1, 0, 0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4.75)
@@ -135,3 +182,11 @@ position = Vector2(-101, 15)
 position = Vector2(102, -20)
 shape = SubResource("RectangleShape2D_qonaf")
 debug_color = Color(0.853333, 0.354964, 0.279595, 0.42)
+
+[node name="damage" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sqbqa")
+}
+
+[node name="hurt_timer" type="Timer" parent="."]
+one_shot = true
