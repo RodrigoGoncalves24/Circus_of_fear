@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 @onready var damage = $damage
 @onready var hurt_timer = $hurt_timer
+@onready var som_dano = $som_dano
+@onready var som_morte = $som_morte
 #Movimentação da criança
 func animate():
 	
@@ -53,6 +55,7 @@ func take_damage():
 	if health > 0:
 		health -= 1
 		damage.play("damage to player")
+		som_dano.play()
 		update_heart_display()
 		hurt_timer.start()
 		await hurt_timer.timeout
@@ -68,5 +71,7 @@ func update_heart_display():
 func die():
 	is_dead = true
 	print("O jogador morreu!")
+	som_morte.play()  
+	await som_morte.finished  
 	Input.set_custom_mouse_cursor(load("res://textures/pointer.png"))
 	get_tree().change_scene_to_file("res://scenes/gameover.tscn")

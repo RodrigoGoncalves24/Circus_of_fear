@@ -2,6 +2,8 @@ extends Area2D
 
 @onready var damage = $"../damage"
 @onready var hurt_timer = $"../hurt_timer"
+@onready var som_dano = $"../som_dano"
+@onready var som_morte = $"../som_morte"
 
 var vida = 3
 
@@ -11,10 +13,14 @@ func _on_area_entered(area: Area2D) -> void:
 		
 		vida -= 1
 		
+		som_dano.play()
 		damage.play("damage_to_zombie")
+		
 		hurt_timer.start()
 		await hurt_timer.timeout
 		damage.play("RESET")
 		
 		if vida <= 0:
+			som_morte.play()
+			await som_morte.finished
 			owner.queue_free()

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjr10m1x4qb0b"]
+
+[ext_resource type="AudioStream" uid="uid://blxjhoe54v82s" path="res://sounds/som ambiente.wav" id="1_wskxf"]
+
+[node name="Musica" type="Node2D"]
+
+[node name="som_ambiente" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_wskxf")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cppiemoik38er"]
+[gd_scene load_steps=4 format=3 uid="uid://cppiemoik38er"]
 
 [ext_resource type="Script" uid="uid://bl0wbedc4aheg" path="res://scripts/estilingue.gd" id="1_vgbqw"]
 [ext_resource type="Texture2D" uid="uid://bqvbnph5ie83" path="res://textures/estiligue.png" id="2_vgbqw"]
+[ext_resource type="AudioStream" uid="uid://ckqq246d6cc2s" path="res://sounds/som disparo.wav" id="3_x46p3"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vgbqw")
@@ -13,3 +14,6 @@ texture = ExtResource("2_vgbqw")
 
 [node name="ponto_disparo" type="Marker2D" parent="."]
 position = Vector2(0, -3)
+
+[node name="som_disparo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_x46p3")

@@ -1,10 +1,12 @@
-[gd_scene load_steps=28 format=3 uid="uid://der53w3qs2ant"]
+[gd_scene load_steps=30 format=3 uid="uid://der53w3qs2ant"]
 
 [ext_resource type="Texture2D" uid="uid://rt65qfq02luh" path="res://textures/personagem.png" id="1_gohld"]
 [ext_resource type="Script" uid="uid://ei4yqd215uc8" path="res://scripts/crianca.gd" id="1_wbya0"]
 [ext_resource type="Script" uid="uid://bylnejo0hgbr6" path="res://scripts/interaction_component.gd" id="3_hjrcj"]
 [ext_resource type="PackedScene" uid="uid://cppiemoik38er" path="res://scenes/estilingue.tscn" id="4_xbjgo"]
 [ext_resource type="Texture2D" uid="uid://dth1vw88ui272" path="res://textures/hearts.png" id="5_vruit"]
+[ext_resource type="AudioStream" uid="uid://dc4dnviehefgr" path="res://sounds/som dano.wav" id="6_eoi0d"]
+[ext_resource type="AudioStream" uid="uid://b1pn160v2ilt3" path="res://sounds/som morte.wav" id="7_fowc3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbya0"]
 atlas = ExtResource("1_gohld")
@@ -274,6 +276,12 @@ limit_top = 0
 limit_right = 1088
 limit_bottom = 704
 limit_smoothed = true
+
+[node name="som_dano" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_eoi0d")
+
+[node name="som_morte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_fowc3")
 
 [connection signal="body_entered" from="InteractionComponent" to="InteractionComponent" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionComponent" to="InteractionComponent" method="_on_body_exited"]

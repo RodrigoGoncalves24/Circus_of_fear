@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var ponto_disparo: Marker2D = $ponto_disparo
 @export var disparo_cooldown: float  = 0.8 #tempo entre disparo
+@onready var som_disparo = $som_disparo
 
 const disparo = preload("res://scenes/disparo.tscn")
 var pode_atirar = true
@@ -16,6 +17,7 @@ func _process(delta: float) -> void:
 		scale.y = 1
 
 	if Input.is_action_just_pressed("tiro"):
+		som_disparo.play()
 		var disparo = disparo.instantiate()
 		get_tree().root.add_child(disparo)
 		disparo.global_position = ponto_disparo.global_position

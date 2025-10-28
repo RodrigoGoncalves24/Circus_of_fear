@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://7xxut8dm6l3j"]
+[gd_scene load_steps=32 format=3 uid="uid://7xxut8dm6l3j"]
 
 [ext_resource type="Script" uid="uid://dxjx8ymv22qwn" path="res://scripts/zumbi.gd" id="1_ijhqn"]
 [ext_resource type="Texture2D" uid="uid://dnxd0d34nkocd" path="res://textures/png/male/Attack (1).png" id="2_uq6ot"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://2k2w7e48713l" path="res://textures/png/male/Walk (8).png" id="9_2uy6j"]
 [ext_resource type="Texture2D" uid="uid://bj1c31s8oxco3" path="res://textures/png/male/Walk (9).png" id="10_2lns0"]
 [ext_resource type="Texture2D" uid="uid://d2gta56sms662" path="res://textures/png/male/Walk (10).png" id="11_dtacc"]
+[ext_resource type="AudioStream" uid="uid://dc4dnviehefgr" path="res://sounds/som dano.wav" id="13_sqbqa"]
+[ext_resource type="AudioStream" uid="uid://b1pn160v2ilt3" path="res://sounds/som morte.wav" id="14_s8ybf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qgdac"]
 atlas = ExtResource("2_uq6ot")
@@ -190,3 +192,9 @@ libraries = {
 
 [node name="hurt_timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="som_dano" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_sqbqa")
+
+[node name="som_morte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_s8ybf")
