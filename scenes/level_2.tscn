@@ -20,7 +20,7 @@ light_mask = 2
 visibility_layer = 4
 position = Vector2(3, 32)
 scale = Vector2(2.05, 2)
-polygon = PackedVector2Array(-17.560976, -4, -17.073172, 311, 534.1463, 311, 534.1463, 208, 482.43906, 208, 482.43906, 240, 498.0488, 240, 498.0488, 304, 123.902, 304, 123.902, 224, 217.561, 224, 217.56099, 208, 123.414635, 208, 123.415, 96, 45.365856, 96, 45.365856, 64, -6.8292685, 64, -6.8292685, 19.5, 45.365856, 19.5, 45.365856, 0, 326.341, 0, 326.341, 64, 498.0488, 64, 498.0488, 144, 482.43906, 144, 482.43906, 176, 534.1463, 176, 534.1463, -3.5)
+polygon = PackedVector2Array(-54.634148, -4, -55.121952, 311, 534.1463, 311, 534.1463, 208, 482.43906, 208, 482.43906, 240, 498.0488, 240, 498.0488, 304, 123.902, 304, 123.902, 224, 217.561, 224, 217.56099, 208, 123.414635, 208, 123.415, 96, 45.365856, 96, 45.365856, 64, -19.024391, 64, -19.024391, 19.5, 45.365856, 19.5, 45.365856, 0, 326.341, 0, 326.341, 64, 498.0488, 64, 498.0488, 144, 482.43906, 144, 482.43906, 176, 534.1463, 176, 534.1463, -3.5)
 
 [node name="TileMapLayer1" type="TileMapLayer" parent="Cenario"]
 show_behind_parent = true
@@ -44,15 +44,17 @@ tile_set = ExtResource("1_jm1iu")
 position = Vector2(992, 416)
 scale = Vector2(2, 2)
 
-[node name="Chest" parent="Cenario" instance=ExtResource("3_eqxsl")]
-position = Vector2(385, 92)
+[node name="SceneLimitPrev" type="Area2D" parent="Cenario/Porta"]
+position = Vector2(-499, -148)
+scale = Vector2(0.5, 0.5)
 
-[node name="SceneLimitPrev" type="Area2D" parent="Cenario"]
-position = Vector2(-6, 120)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/SceneLimitPrev"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/Porta/SceneLimitPrev"]
 position = Vector2(0.48051453, 0.1635437)
 shape = SubResource("RectangleShape2D_eqxsl")
+disabled = true
+
+[node name="Chest" parent="Cenario" instance=ExtResource("3_eqxsl")]
+position = Vector2(385, 92)
 
 [node name="Crianca" parent="." instance=ExtResource("2_k8pka")]
 position = Vector2(120, 124)

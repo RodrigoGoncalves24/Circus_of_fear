@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://dvdyj3uieok3l"]
 
 [ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="2_26yjs"]
-[ext_resource type="Script" uid="uid://dsgoyxi4v25lm" path="res://scripts/button_jogar.gd" id="3_eoium"]
-[ext_resource type="Script" uid="uid://dcwgmk1kvmu1r" path="res://scripts/button_controles.gd" id="4_26yjs"]
-[ext_resource type="Script" uid="uid://ckdlv5wy1rp4s" path="res://scripts/button_sair.gd" id="5_eoium"]
+[ext_resource type="Script" uid="uid://cl58bbi10xt3e" path="res://scripts/button_jogar.gd" id="3_eoium"]
+[ext_resource type="Script" uid="uid://78patcpkwj54" path="res://scripts/button_controles.gd" id="4_26yjs"]
+[ext_resource type="Script" uid="uid://dc1a04bwfwpmp" path="res://scripts/button_sair.gd" id="5_eoium"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dy3ie"]
 font = ExtResource("2_26yjs")

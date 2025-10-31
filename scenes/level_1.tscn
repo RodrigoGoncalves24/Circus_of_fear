@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bmdxft8utt8bc" path="res://scenes/porta.tscn" id="2_15mv3"]
 [ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://textures/tileset.tres" id="2_bswci"]
 [ext_resource type="PackedScene" uid="uid://pigi6kmerpyx" path="res://scenes/chest.tscn" id="3_rus8k"]
-[ext_resource type="Script" uid="uid://152h4obfqdmx" path="res://scripts/items/inventoryItem.gd" id="4_4nkto"]
+[ext_resource type="Script" uid="uid://152h4obfqdmx" path="res://scripts/items/InventoryItem.gd" id="4_4nkto"]
 [ext_resource type="Resource" uid="uid://13ehaxgd4op2" path="res://scripts/items/ammo.tres" id="5_4nkto"]
 [ext_resource type="Resource" uid="uid://d3l6i7t1fwwu3" path="res://scripts/items/heart.tres" id="5_fcfvj"]
 [ext_resource type="Resource" uid="uid://vfoj7wg1cn7" path="res://scripts/items/key.tres" id="6_fcfvj"]
@@ -43,6 +43,8 @@ tile_set = ExtResource("2_bswci")
 [node name="Porta" parent="Cenario" groups=["portas"] instance=ExtResource("2_15mv3")]
 position = Vector2(993, 416)
 scale = Vector2(2, 2)
+collision_layer = 1
+collision_mask = 1
 
 [node name="Crianca" parent="." instance=ExtResource("1_tpjal")]
 position = Vector2(113.945, 109.919)
