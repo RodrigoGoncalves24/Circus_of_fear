@@ -47,7 +47,6 @@ position = Vector2(-6, 120)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/SceneLimitPrev"]
 position = Vector2(0.48051453, 0.1635437)
 shape = SubResource("RectangleShape2D_uwxec")
-disabled = true
 
 [node name="Crianca" parent="." instance=ExtResource("2_uwxec")]
 position = Vector2(173, 139)

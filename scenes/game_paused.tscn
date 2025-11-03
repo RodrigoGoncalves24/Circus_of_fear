@@ -1,13 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bh16hus80ht8e"]
+[gd_scene load_steps=8 format=3 uid="uid://bh16hus80ht8e"]
 
+[ext_resource type="Script" uid="uid://g5rauilgmgs3" path="res://scripts/game_paused.gd" id="1_0acj3"]
 [ext_resource type="Material" uid="uid://wdb4d5yld8nm" path="res://shaders/blur.tres" id="1_r1bre"]
 [ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="1_ukphe"]
-[ext_resource type="Script" uid="uid://78patcpkwj54" path="res://scripts/button_controles.gd" id="3_37l1g"]
-[ext_resource type="Script" uid="uid://dc1a04bwfwpmp" path="res://scripts/button_sair.gd" id="4_yvmuh"]
-
-[sub_resource type="GDScript" id="GDScript_0acj3"]
-script/source = "extends Control
-"
 
 [sub_resource type="LabelSettings" id="LabelSettings_dy3ie"]
 font = ExtResource("1_ukphe")
@@ -42,7 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_0acj3")
+script = ExtResource("1_0acj3")
 
 [node name="Blur" type="ColorRect" parent="."]
 material = ExtResource("1_r1bre")
@@ -70,7 +65,7 @@ text = "Pausa"
 label_settings = SubResource("LabelSettings_dy3ie")
 horizontal_alignment = 1
 
-[node name="Voltar" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Continuar" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6862745, 0.60784316, 0.60784316, 1)
 theme_override_fonts/font = ExtResource("1_ukphe")
@@ -78,18 +73,7 @@ theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_2mkfd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
-text = "Voltar"
-
-[node name="Controles" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.6862745, 0.60784316, 0.60784316, 1)
-theme_override_fonts/font = ExtResource("1_ukphe")
-theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_2mkfd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
-text = "Controles"
-script = ExtResource("3_37l1g")
+text = "Continuar"
 
 [node name="Sair" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -100,4 +84,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2mkfd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
 text = "Sair"
-script = ExtResource("4_yvmuh")
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]

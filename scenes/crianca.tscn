@@ -222,6 +222,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="health_bar" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="health_bar"]
 offset_right = 40.0

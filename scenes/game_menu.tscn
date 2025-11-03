@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvdyj3uieok3l"]
+[gd_scene load_steps=7 format=3 uid="uid://dvdyj3uieok3l"]
 
 [ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="1_mw6r2"]
-[ext_resource type="Script" uid="uid://cl58bbi10xt3e" path="res://scripts/button_jogar.gd" id="2_ldg7d"]
-[ext_resource type="Script" uid="uid://78patcpkwj54" path="res://scripts/button_controles.gd" id="3_aru3y"]
-[ext_resource type="Script" uid="uid://dc1a04bwfwpmp" path="res://scripts/button_sair.gd" id="4_0b27c"]
+[ext_resource type="Script" uid="uid://bywux6m28wxf3" path="res://scripts/game_menu.gd" id="1_vrsc2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dy3ie"]
 font = ExtResource("1_mw6r2")
@@ -37,11 +35,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vrsc2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1151.0
-offset_bottom = 646.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.14509805, 0.07450981, 0.101960786, 1)
 
 [node name="Label" type="Label" parent="ColorRect"]
@@ -67,7 +69,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2mkfd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
 text = "Jogar"
-script = ExtResource("2_ldg7d")
 
 [node name="Controles" type="Button" parent="ColorRect"]
 layout_mode = 0
@@ -82,7 +83,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2mkfd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
 text = "Controles"
-script = ExtResource("3_aru3y")
 
 [node name="Sair" type="Button" parent="ColorRect"]
 layout_mode = 0
@@ -97,4 +97,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2mkfd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
 text = "Sair"
-script = ExtResource("4_0b27c")
+
+[connection signal="pressed" from="ColorRect/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="ColorRect/Controles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="ColorRect/Sair" to="." method="_on_sair_pressed"]

@@ -40,18 +40,17 @@ scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAASAAEAAAAEAAcAAAAFAAEAAAAEAAcAAAAIAAEAAAAAAAkAAAAIAAsAAAABAAkAAAAIAA8AAAAAAAkAAAAIABAAAAAJAAUAABAIABMAAAAFAAYAADAJAA0AAAAJAAUAAAAKAAIAAAAIAAYAAAAMAAwAAAAJAAQAAAAMABMAAAAJAAUAAAANAA8AAAAEAAcAAAAOAAgAAAAJAAUAAAAPAAEAAAAAAAkAAAATAAIAAAAJAAQAABAWAAUAAAAAAAkAAAAaAAUAAAAEAAcAAAAaAAgAAAAIAAYAAAAcABIAAAAHAAcAAAAeAAUAAAAAAAkAAAAeAAsAAAABAAkAABAeAA4AAAABAAkAABAfABMAAAAEAAYAABADAAIAAAAFAAYAABADAAUAAAABAAkAAAAGAAYAAAAJAAUAAAA=")
 tile_set = ExtResource("1_jm1iu")
 
-[node name="Porta" parent="Cenario" groups=["portas"] instance=ExtResource("3_pbc48")]
-position = Vector2(992, 416)
-scale = Vector2(2, 2)
+[node name="SceneLimitPrev" type="Area2D" parent="Cenario"]
+position = Vector2(-6, 120)
 
-[node name="SceneLimitPrev" type="Area2D" parent="Cenario/Porta"]
-position = Vector2(-499, -148)
-scale = Vector2(0.5, 0.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/Porta/SceneLimitPrev"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/SceneLimitPrev"]
 position = Vector2(0.48051453, 0.1635437)
 shape = SubResource("RectangleShape2D_eqxsl")
 disabled = true
+
+[node name="Porta" parent="Cenario" groups=["portas"] instance=ExtResource("3_pbc48")]
+position = Vector2(992, 416)
+scale = Vector2(2, 2)
 
 [node name="Chest" parent="Cenario" instance=ExtResource("3_eqxsl")]
 position = Vector2(385, 92)
@@ -68,3 +67,5 @@ position = Vector2(728, 354)
 
 [node name="Zumbi3" parent="." instance=ExtResource("5_b4j7a")]
 position = Vector2(686, 553)
+
+[connection signal="body_entered" from="Cenario/SceneLimitPrev" to="Cenario/Porta" method="_on_scene_limit_prev_body_entered"]

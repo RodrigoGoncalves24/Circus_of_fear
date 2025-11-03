@@ -39,11 +39,12 @@ func fechar_porta():
 	aberta.hide()
 	collider.set_deferred("disabled", false)
 
-func _on_scene_limit_entered(body):
+func _on_scene_limit_body_entered(body: CharacterBody2D) -> void:
 	if game and level_cleared:
 		game.proxima_fase()
 
-func _on_scene_limit_prev_entered(body):
+func _on_scene_limit_prev_body_entered(body: CharacterBody2D) -> void:
 	print("vai voltar")
+	#TODO: MOVER ESSA PARTE PARA UM NOVO SCRIPT DE "PASSAGEM" OU ALGO ASSIM
 	if game:
 		game.fase_anterior()

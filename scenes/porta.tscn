@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bmdxft8utt8bc"]
 
 [ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://textures/tileset.tres" id="1_fctyj"]
-[ext_resource type="Script" uid="uid://dxui3dcddeusy" path="res://scripts/porta.gd" id="1_hlcnn"]
+[ext_resource type="Script" uid="uid://doncgnmboscey" path="res://scripts/porta.gd" id="1_hlcnn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hlcnn"]
 size = Vector2(2.92683, 16)
@@ -34,3 +34,5 @@ position = Vector2(50, 0)
 [node name="ZonaLimite" type="CollisionShape2D" parent="SceneLimit"]
 position = Vector2(0.040901184, -0.0061383247)
 shape = SubResource("RectangleShape2D_rwxfp")
+
+[connection signal="body_entered" from="SceneLimit" to="." method="_on_scene_limit_body_entered"]

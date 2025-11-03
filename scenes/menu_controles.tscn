@@ -1,12 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://byhahyf15uv1j"]
+[gd_scene load_steps=30 format=3 uid="uid://byhahyf15uv1j"]
 
-[ext_resource type="Script" uid="uid://bf1phdmpud62c" path="res://scripts/controles.gd" id="1_tdf2h"]
-[ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="2_tdf2h"]
-[ext_resource type="Texture2D" uid="uid://dwbh6q0fpp5vg" path="res://textures/gdb-keyboard-2.png" id="3_tdf2h"]
-[ext_resource type="Script" uid="uid://duhh83msidi0s" path="res://scripts/button_controles_voltar.gd" id="4_tdf2h"]
+[ext_resource type="Script" uid="uid://de02xiivdsqvf" path="res://scripts/menu_controles.gd" id="1_n4rxx"]
+[ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="2_mj6fx"]
+[ext_resource type="Texture2D" uid="uid://bbro8dclq8hsn" path="res://textures/gdb-keyboard-2.png" id="3_711sx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dy3ie"]
-font = ExtResource("2_tdf2h")
+font = ExtResource("2_mj6fx")
 font_size = 300
 font_color = Color(0.6877407, 0.6082873, 0.60804355, 1)
 
@@ -31,11 +30,11 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y8bqw"]
-atlas = ExtResource("3_tdf2h")
+atlas = ExtResource("3_711sx")
 region = Rect2(502, 2, 19, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v15ka"]
-atlas = ExtResource("3_tdf2h")
+atlas = ExtResource("3_711sx")
 region = Rect2(502, 34, 19, 29)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v15ka"]
@@ -53,16 +52,16 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tdf2h"]
-font = ExtResource("2_tdf2h")
+font = ExtResource("2_mj6fx")
 font_size = 100
 font_color = Color(0.6862745, 0.60784316, 0.60784316, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tibuc"]
-atlas = ExtResource("3_tdf2h")
+atlas = ExtResource("3_711sx")
 region = Rect2(96, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vloh4"]
-atlas = ExtResource("3_tdf2h")
+atlas = ExtResource("3_711sx")
 region = Rect2(96, 272, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c0t43"]
@@ -80,11 +79,11 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_812db"]
-atlas = ExtResource("3_tdf2h")
+atlas = ExtResource("3_711sx")
 region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e76mp"]
-atlas = ExtResource("3_tdf2h")
+atlas = ExtResource("3_711sx")
 region = Rect2(32, 240, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uurhe"]
@@ -102,11 +101,11 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tdf2h"]
-atlas = ExtResource("3_tdf2h")
+atlas = ExtResource("3_711sx")
 region = Rect2(80, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5t3qn"]
-atlas = ExtResource("3_tdf2h")
+atlas = ExtResource("3_711sx")
 region = Rect2(80, 272, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eepv1"]
@@ -124,11 +123,11 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lnb0i"]
-atlas = ExtResource("3_tdf2h")
+atlas = ExtResource("3_711sx")
 region = Rect2(64, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wun4m"]
-atlas = ExtResource("3_tdf2h")
+atlas = ExtResource("3_711sx")
 region = Rect2(64, 288, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vyhya"]
@@ -146,11 +145,11 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_upanb"]
-atlas = ExtResource("3_tdf2h")
+atlas = ExtResource("3_711sx")
 region = Rect2(80, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1tfx7"]
-atlas = ExtResource("3_tdf2h")
+atlas = ExtResource("3_711sx")
 region = Rect2(80, 288, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yb4re"]
@@ -168,11 +167,11 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_exutc"]
-atlas = ExtResource("3_tdf2h")
+atlas = ExtResource("3_711sx")
 region = Rect2(96, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i8xxn"]
-atlas = ExtResource("3_tdf2h")
+atlas = ExtResource("3_711sx")
 region = Rect2(96, 288, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jbu17"]
@@ -196,7 +195,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tdf2h")
+script = ExtResource("1_n4rxx")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -223,13 +222,12 @@ offset_top = 520.0657
 offset_right = 863.9015
 offset_bottom = 585.0657
 theme_override_colors/font_color = Color(0.6862745, 0.60784316, 0.60784316, 1)
-theme_override_fonts/font = ExtResource("2_tdf2h")
+theme_override_fonts/font = ExtResource("2_mj6fx")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_tdf2h")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_y8bqw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v15ka")
 text = "Voltar"
-script = ExtResource("4_tdf2h")
 
 [node name="mouse" type="AnimatedSprite2D" parent="ColorRect"]
 position = Vector2(758.9015, 288.06567)
@@ -302,3 +300,5 @@ offset_right = 599.9015
 offset_bottom = 316.06567
 text = "Movimento"
 label_settings = SubResource("LabelSettings_tdf2h")
+
+[connection signal="pressed" from="ColorRect/Voltar" to="." method="_on_voltar_pressed"]

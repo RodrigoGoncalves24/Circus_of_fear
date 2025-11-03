@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bpggd4gu6vkcn"]
+[gd_scene load_steps=10 format=3 uid="uid://bpggd4gu6vkcn"]
 
 [ext_resource type="Script" uid="uid://dsw4nl466nfr8" path="res://scripts/gameover.gd" id="1_2mkfd"]
 [ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="1_v8l1s"]
-[ext_resource type="Script" uid="uid://cfos52slkjeee" path="res://scripts/button_play_again.gd" id="3_2mkfd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dy3ie"]
 font = ExtResource("1_v8l1s")
@@ -106,10 +105,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2mkfd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
 text = "Play Again"
-script = ExtResource("3_2mkfd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
 root_node = NodePath("../Label")
 libraries = {
 &"": SubResource("AnimationLibrary_h8i2o")
 }
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]

@@ -29,3 +29,6 @@ func _highlight_key(key):
 	key.play("default")
 	await get_tree().create_timer(1.0).timeout
 	key.stop()
+
+func _on_voltar_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/game_menu.tscn")

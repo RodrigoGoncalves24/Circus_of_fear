@@ -1,31 +1,31 @@
 extends Node2D
 
-@onready var level: Node = $Level
-@onready var player: CharacterBody2D = level.get_node("Crianca")
-@onready var pause: Control = $Game_Paused
-
+@onready var level: Node
+@onready var player: CharacterBody2D
+@onready var tela_pause: Control = $UI/Game_Paused
 @onready var current_level = 1
 
 @export var monsters_count = 2
 
 func _ready() -> void:
-	pause.hide()
+	var qtd_filhos = get_child_count()
+	level = get_child(qtd_filhos-1)
+	player = level.get_node("Crianca")
+	tela_pause.hide()
 	
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") and get_tree().paused:
-		print("UNPAUSE")
 		_Unpause()
 	elif Input.is_action_just_pressed("pause"):
-		print("PAUSE")
 		_Pause()
 	
 func _Pause():
 	get_tree().paused = true
-	pause.show()
+	tela_pause.show()
 	
 func _Unpause():
 	get_tree().paused = false
-	pause.hide()
+	tela_pause.hide()
 		
 func proxima_fase():
 	call_deferred("goto_scene", "res://scenes/level_" + str(switch_level(1)) + ".tscn")

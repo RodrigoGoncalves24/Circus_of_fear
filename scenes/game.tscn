@@ -8,11 +8,10 @@
 process_mode = 3
 script = ExtResource("1_yqjtg")
 
-[node name="Level" parent="." instance=ExtResource("1_fd8wr")]
-process_mode = 1
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Game_Paused" parent="." instance=ExtResource("3_lnu2h")]
+[node name="Game_Paused" parent="UI" instance=ExtResource("3_lnu2h")]
 top_level = true
 
-[editable path="Level"]
-[editable path="Level/Crianca"]
+[node name="Level" parent="." instance=ExtResource("1_fd8wr")]
+process_mode = 1
