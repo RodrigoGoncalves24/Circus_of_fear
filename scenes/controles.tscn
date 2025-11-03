@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://byhahyf15uv1j"]
+[gd_scene load_steps=31 format=3 uid="uid://byhahyf15uv1j"]
 
+[ext_resource type="Script" uid="uid://bf1phdmpud62c" path="res://scripts/controles.gd" id="1_tdf2h"]
 [ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="2_tdf2h"]
-[ext_resource type="Texture2D" uid="uid://beq1n1r83tfbc" path="res://textures/wasd.png" id="3_tdf2h"]
-[ext_resource type="Script" uid="uid://cpa54x3is406r" path="res://scripts/button_controles_voltar.gd" id="4_tdf2h"]
-[ext_resource type="Texture2D" uid="uid://cu50fs10w0uym" path="res://textures/mouse.png" id="4_y8bqw"]
+[ext_resource type="Texture2D" uid="uid://dwbh6q0fpp5vg" path="res://textures/gdb-keyboard-2.png" id="3_tdf2h"]
+[ext_resource type="Script" uid="uid://duhh83msidi0s" path="res://scripts/button_controles_voltar.gd" id="4_tdf2h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dy3ie"]
 font = ExtResource("2_tdf2h")
@@ -30,6 +30,165 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8bqw"]
+atlas = ExtResource("3_tdf2h")
+region = Rect2(502, 2, 19, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v15ka"]
+atlas = ExtResource("3_tdf2h")
+region = Rect2(502, 34, 19, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v15ka"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8bqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v15ka")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tdf2h"]
+font = ExtResource("2_tdf2h")
+font_size = 100
+font_color = Color(0.6862745, 0.60784316, 0.60784316, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tibuc"]
+atlas = ExtResource("3_tdf2h")
+region = Rect2(96, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vloh4"]
+atlas = ExtResource("3_tdf2h")
+region = Rect2(96, 272, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c0t43"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tibuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vloh4")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_812db"]
+atlas = ExtResource("3_tdf2h")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e76mp"]
+atlas = ExtResource("3_tdf2h")
+region = Rect2(32, 240, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uurhe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_812db")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e76mp")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdf2h"]
+atlas = ExtResource("3_tdf2h")
+region = Rect2(80, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5t3qn"]
+atlas = ExtResource("3_tdf2h")
+region = Rect2(80, 272, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eepv1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdf2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5t3qn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnb0i"]
+atlas = ExtResource("3_tdf2h")
+region = Rect2(64, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wun4m"]
+atlas = ExtResource("3_tdf2h")
+region = Rect2(64, 288, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vyhya"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnb0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wun4m")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upanb"]
+atlas = ExtResource("3_tdf2h")
+region = Rect2(80, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tfx7"]
+atlas = ExtResource("3_tdf2h")
+region = Rect2(80, 288, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yb4re"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upanb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tfx7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exutc"]
+atlas = ExtResource("3_tdf2h")
+region = Rect2(96, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8xxn"]
+atlas = ExtResource("3_tdf2h")
+region = Rect2(96, 288, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jbu17"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exutc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8xxn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
+
 [node name="Controles" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -37,37 +196,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tdf2h")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1151.0
-offset_bottom = 646.0
+offset_left = 0.09851837
+offset_top = -0.06567764
+offset_right = 1151.0985
+offset_bottom = 645.9343
 color = Color(0.14509805, 0.07450981, 0.101960786, 1)
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 185.0
-offset_top = 81.0
-offset_right = 963.0
-offset_bottom = 251.0
+offset_left = 191.90149
+offset_top = 24.065678
+offset_right = 969.9015
+offset_bottom = 194.06567
 text = "Controles"
 label_settings = SubResource("LabelSettings_dy3ie")
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
-position = Vector2(325.5, 405)
-texture = ExtResource("3_tdf2h")
-
-[node name="Sprite2D2" type="Sprite2D" parent="ColorRect"]
-position = Vector2(796.5, 408)
-texture = ExtResource("4_y8bqw")
-
 [node name="Voltar" type="Button" parent="ColorRect"]
 layout_mode = 0
-offset_left = 275.0
-offset_top = 533.0
-offset_right = 875.0
-offset_bottom = 598.0
+offset_left = 263.9015
+offset_top = 520.0657
+offset_right = 863.9015
+offset_bottom = 585.0657
 theme_override_colors/font_color = Color(0.6862745, 0.60784316, 0.60784316, 1)
 theme_override_fonts/font = ExtResource("2_tdf2h")
 theme_override_font_sizes/font_size = 100
@@ -76,3 +230,75 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_y8bqw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v15ka")
 text = "Voltar"
 script = ExtResource("4_tdf2h")
+
+[node name="mouse" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(758.9015, 288.06567)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_v15ka")
+frame_progress = 1.0
+
+[node name="Label5" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 815.9015
+offset_top = 256.06567
+offset_right = 1049.9015
+offset_bottom = 313.06567
+text = "Mirar/Atirar"
+label_settings = SubResource("LabelSettings_tdf2h")
+
+[node name="e" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(369.9015, 441.06567)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_c0t43")
+
+[node name="Label3" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 413.9015
+offset_top = 407.06567
+offset_right = 604.9015
+offset_bottom = 464.06567
+text = "Açao"
+label_settings = SubResource("LabelSettings_tdf2h")
+
+[node name="esc" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(669.9015, 441.06567)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_uurhe")
+
+[node name="Label4" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 713.9015
+offset_top = 404.06567
+offset_right = 904.9015
+offset_bottom = 461.06567
+text = "Pausar"
+label_settings = SubResource("LabelSettings_tdf2h")
+
+[node name="w" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(295.9015, 272.06567)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_eepv1")
+
+[node name="a" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(263.9015, 320.06567)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_vyhya")
+
+[node name="s" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(311.9015, 320.06567)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_yb4re")
+
+[node name="d" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(359.9015, 320.06567)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_jbu17")
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 408.9015
+offset_top = 259.06567
+offset_right = 599.9015
+offset_bottom = 316.06567
+text = "Movimento"
+label_settings = SubResource("LabelSettings_tdf2h")

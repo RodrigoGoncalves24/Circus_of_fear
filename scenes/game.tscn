@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://c33idtjns1ytj"]
+[gd_scene load_steps=4 format=3 uid="uid://c33idtjns1ytj"]
 
 [ext_resource type="PackedScene" uid="uid://cp84g8w07pgbm" path="res://scenes/level_1.tscn" id="1_fd8wr"]
 [ext_resource type="Script" uid="uid://cmvuxrm4qqfp5" path="res://scripts/game.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bh16hus80ht8e" path="res://scenes/game_paused.tscn" id="3_lnu2h"]
 
 [node name="Game" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_yqjtg")
 
 [node name="Level" parent="." instance=ExtResource("1_fd8wr")]
+process_mode = 1
+
+[node name="Game_Paused" parent="." instance=ExtResource("3_lnu2h")]
+top_level = true
+
+[editable path="Level"]
+[editable path="Level/Crianca"]
