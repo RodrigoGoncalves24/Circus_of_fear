@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bmdxft8utt8bc" path="res://scenes/porta.tscn" id="2_15mv3"]
 [ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://textures/tileset.tres" id="2_bswci"]
 [ext_resource type="PackedScene" uid="uid://pigi6kmerpyx" path="res://scenes/chest.tscn" id="3_rus8k"]
-[ext_resource type="Script" uid="uid://152h4obfqdmx" path="res://scripts/items/InventoryItem.gd" id="4_4nkto"]
+[ext_resource type="Script" uid="uid://bhn1xrciav0h3" path="res://scripts/items/InventoryItem.gd" id="4_4nkto"]
 [ext_resource type="Resource" uid="uid://13ehaxgd4op2" path="res://scripts/items/ammo.tres" id="5_4nkto"]
 [ext_resource type="Resource" uid="uid://d3l6i7t1fwwu3" path="res://scripts/items/heart.tres" id="5_fcfvj"]
 [ext_resource type="Resource" uid="uid://vfoj7wg1cn7" path="res://scripts/items/key.tres" id="6_fcfvj"]
@@ -20,7 +20,7 @@ light_mask = 2
 visibility_layer = 4
 position = Vector2(3, 32)
 scale = Vector2(2.05, 2)
-polygon = PackedVector2Array(23.4146, -4, 23.4146, 311, 534.1463, 311, 534.1463, 208, 482.43906, 208, 482.43906, 240, 498.0488, 240, 498.0488, 304, 123.902, 304, 123.902, 224, 217.561, 224, 217.561, 208.5, 123.902, 208.5, 123.415, 96, 30.2439, 96, 30.2439, 0, 326.341, 0, 326.341, 64, 498.0488, 64, 498.0488, 144, 482.43906, 144, 482.43906, 176, 534.1463, 176, 534.1463, -3.5)
+polygon = PackedVector2Array(23.4146, -4, 23.4146, 311, 534.146, 311, 534.146, 208, 482.439, 208, 482.439, 240, 498.049, 240, 498.049, 304, 123.902, 304, 123.902, 224, 217.561, 224, 217.561, 208.5, 123.902, 208.5, 123.415, 96, 30.2439, 96, 30.2439, 0, 326.341, 0, 326.341, 64, 498.049, 64, 498.049, 144, 482.439, 144, 482.439, 176, 534.146, 176, 534.146, -3.5)
 
 [node name="TileMapLayer1" type="TileMapLayer" parent="Cenario"]
 show_behind_parent = true

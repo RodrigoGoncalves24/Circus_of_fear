@@ -4,24 +4,28 @@ extends CharacterBody2D
 @onready var wall_detector: RayCast2D = $RayCast2D
 @onready var zumbi = $AnimatedSprite2D
 @onready var hitbox: Area2D = $hitbox
-
-const speed = 100.0
-var direction := 1
-
-func _physics_process(delta: float):
-		
-	if is_on_wall():
-		direction *= -1
-		wall_detector.scale.x *= -1
+@onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
+@export var speed: float = 100.0
+@onready var player = get_parent().get_node("Crianca")
 	
-	if direction == 1:
-		zumbi.flip_h = false
-	else:
-		zumbi.flip_h = true
+func _physics_process(delta: float) -> void:
+	if player:
+		var direction = (player.global_position - global_position).normalized()
+		velocity = direction * speed;
+		move_and_slide()
 		
-	
-	velocity.x = direction * speed
-	move_and_slide()
+		
+		if abs(direction.x) > abs(direction.y):
+			zumbi.play("rigth")
+			if direction.x > 0:
+				zumbi.flip_h = false
+			elif direction.x < 0:
+				zumbi.flip_h = true
+		elif direction.y < 0:
+			zumbi.play("up")
+		else:
+			zumbi.play("down")
+
 
 func _ready():
 	hitbox.body_entered.connect(on_hitbox_body_entered)
