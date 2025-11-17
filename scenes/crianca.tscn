@@ -1,17 +1,13 @@
-[gd_scene load_steps=28 format=3 uid="uid://der53w3qs2ant"]
+[gd_scene load_steps=27 format=3 uid="uid://der53w3qs2ant"]
 
-[ext_resource type="Texture2D" uid="uid://bxh4nn3n2pubg" path="res://textures/personagem.png" id="1_gohld"]
 [ext_resource type="Script" uid="uid://ei4yqd215uc8" path="res://scripts/crianca.gd" id="1_wbya0"]
-[ext_resource type="Texture2D" uid="uid://l0clagcx2qjh" path="res://textures/PIPOYA FREE RPG Character Sprites 32x32/Male/Male 01-2.png" id="3_fowc3"]
-[ext_resource type="Script" uid="uid://c5mjt5t5ftj8u" path="res://scripts/interaction_component.gd" id="3_hjrcj"]
+[ext_resource type="Texture2D" uid="uid://dnmdtwi01qux" path="res://textures/PIPOYA FREE RPG Character Sprites 32x32/Male/Male 01-2.png" id="3_fowc3"]
+[ext_resource type="Script" uid="uid://bylnejo0hgbr6" path="res://scripts/interaction_component.gd" id="3_hjrcj"]
 [ext_resource type="PackedScene" uid="uid://cppiemoik38er" path="res://scenes/estilingue.tscn" id="4_xbjgo"]
-[ext_resource type="Texture2D" uid="uid://dk5ue54qgsp2i" path="res://textures/hearts.png" id="5_vruit"]
-[ext_resource type="AudioStream" uid="uid://dlrd17jmrrruo" path="res://sounds/som dano.wav" id="6_eoi0d"]
-[ext_resource type="AudioStream" uid="uid://c0ldvlg8d3cni" path="res://sounds/som morte.wav" id="7_fowc3"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5olvq"]
-atlas = ExtResource("1_gohld")
-region = Rect2(192, 0, 64, 64)
+[ext_resource type="Texture2D" uid="uid://dth1vw88ui272" path="res://textures/hearts.png" id="5_vruit"]
+[ext_resource type="AudioStream" uid="uid://dc4dnviehefgr" path="res://sounds/som dano.wav" id="6_eoi0d"]
+[ext_resource type="PackedScene" uid="uid://cwnsf80ba1rlw" path="res://scenes/fearbar.tscn" id="6_fowc3"]
+[ext_resource type="AudioStream" uid="uid://b1pn160v2ilt3" path="res://sounds/som morte.wav" id="7_fowc3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7df7u"]
 atlas = ExtResource("3_fowc3")
@@ -64,9 +60,6 @@ region = Rect2(64, 96, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_2pg2d"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5olvq")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7df7u")
 }, {
@@ -124,7 +117,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2k80"]
-size = Vector2(36, 58)
+size = Vector2(36, 55)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xbjgo"]
 radius = 40.1123
@@ -175,7 +168,7 @@ script = ExtResource("1_wbya0")
 clip_children = 2
 scale = Vector2(1.8, 1.8)
 sprite_frames = SubResource("SpriteFrames_2pg2d")
-animation = &"up"
+animation = &"down"
 speed_scale = 0.8
 
 [node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D"]
@@ -186,7 +179,7 @@ offset_bottom = 76.0
 color = Color(1, 0, 0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_s2k80")
 
 [node name="Node2D" parent="." instance=ExtResource("4_xbjgo")]
@@ -215,7 +208,7 @@ custom_minimum_size = Vector2(37, 0)
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart"]
-position = Vector2(19, 13)
+position = Vector2(22, 22)
 scale = Vector2(2.415, 2.415)
 texture = ExtResource("5_vruit")
 region_enabled = true
@@ -226,7 +219,7 @@ custom_minimum_size = Vector2(37, 0)
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart2"]
-position = Vector2(19, 13)
+position = Vector2(22, 22)
 scale = Vector2(2.415, 2.415)
 texture = ExtResource("5_vruit")
 region_enabled = true
@@ -237,11 +230,17 @@ custom_minimum_size = Vector2(37, 0)
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart3"]
-position = Vector2(19, 13)
+position = Vector2(22, 22)
 scale = Vector2(2.415, 2.415)
 texture = ExtResource("5_vruit")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
+
+[node name="FearBar" parent="health_bar" instance=ExtResource("6_fowc3")]
+offset_left = 134.0
+offset_top = 8.0
+offset_right = 321.0
+offset_bottom = 35.0
 
 [node name="damage" type="AnimationPlayer" parent="."]
 libraries = {

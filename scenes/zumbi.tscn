@@ -1,11 +1,11 @@
 [gd_scene load_steps=25 format=3 uid="uid://7xxut8dm6l3j"]
 
-[ext_resource type="Script" uid="uid://blhvby4tbp4t4" path="res://scripts/zumbi.gd" id="1_ijhqn"]
-[ext_resource type="Texture2D" uid="uid://d0ue8csaqrfgf" path="res://textures/PIPOYA FREE RPG Character Sprites 32x32/Enemy/Enemy 04-1.png" id="2_qonaf"]
+[ext_resource type="Script" uid="uid://c0h2645dpjtp1" path="res://scripts/zumbi.gd" id="1_ijhqn"]
+[ext_resource type="Texture2D" uid="uid://etj0hmpkf0jk" path="res://textures/PIPOYA FREE RPG Character Sprites 32x32/Enemy/Enemy 04-1.png" id="2_qonaf"]
 [ext_resource type="PackedScene" uid="uid://bqslmhyyw4av2" path="res://scenes/hitbox.tscn" id="3_32ssj"]
-[ext_resource type="Texture2D" uid="uid://l8aophe52uu6" path="res://textures/PIPOYA FREE RPG Character Sprites 32x32/Enemy/Enemy 06-1.png" id="3_dvtdg"]
-[ext_resource type="AudioStream" uid="uid://dlrd17jmrrruo" path="res://sounds/som dano.wav" id="13_sqbqa"]
-[ext_resource type="AudioStream" uid="uid://c0ldvlg8d3cni" path="res://sounds/som morte.wav" id="14_s8ybf"]
+[ext_resource type="Texture2D" uid="uid://plemkr58gnex" path="res://textures/PIPOYA FREE RPG Character Sprites 32x32/Enemy/Enemy 06-1.png" id="3_dvtdg"]
+[ext_resource type="AudioStream" uid="uid://dc4dnviehefgr" path="res://sounds/som dano.wav" id="13_sqbqa"]
+[ext_resource type="AudioStream" uid="uid://b1pn160v2ilt3" path="res://sounds/som morte.wav" id="14_s8ybf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_srh2m"]
 atlas = ExtResource("2_qonaf")
@@ -118,7 +118,7 @@ animations = [{
 size = Vector2(40, 45.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qonaf"]
-size = Vector2(74, 48)
+size = Vector2(61.53602, 48)
 
 [sub_resource type="Animation" id="Animation_uq6ot"]
 length = 0.001
@@ -171,7 +171,7 @@ visibility_layer = 2
 position = Vector2(3, -7)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_s6dug")
-animation = &"up"
+animation = &"rigth"
 autoplay = "rigth"
 speed_scale = 0.8
 
@@ -196,7 +196,7 @@ target_position = Vector2(11, 0)
 position = Vector2(-101, 15)
 
 [node name="collision" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(102, -20)
+position = Vector2(103.977554, -20)
 shape = SubResource("RectangleShape2D_qonaf")
 debug_color = Color(0.853333, 0.354964, 0.279595, 0.42)
 
