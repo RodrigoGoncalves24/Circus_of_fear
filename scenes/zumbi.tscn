@@ -1,11 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://7xxut8dm6l3j"]
+[gd_scene load_steps=24 format=3 uid="uid://7xxut8dm6l3j"]
 
-[ext_resource type="Script" uid="uid://c0h2645dpjtp1" path="res://scripts/zumbi.gd" id="1_ijhqn"]
-[ext_resource type="Texture2D" uid="uid://etj0hmpkf0jk" path="res://textures/PIPOYA FREE RPG Character Sprites 32x32/Enemy/Enemy 04-1.png" id="2_qonaf"]
+[ext_resource type="Script" uid="uid://dw5uy6khnvqge" path="res://scripts/zumbi.gd" id="1_ijhqn"]
+[ext_resource type="Texture2D" uid="uid://1wffn6wxp2gm" path="res://textures/PIPOYA FREE RPG Character Sprites 32x32/Enemy/Enemy 04-1.png" id="2_qonaf"]
 [ext_resource type="PackedScene" uid="uid://bqslmhyyw4av2" path="res://scenes/hitbox.tscn" id="3_32ssj"]
-[ext_resource type="Texture2D" uid="uid://plemkr58gnex" path="res://textures/PIPOYA FREE RPG Character Sprites 32x32/Enemy/Enemy 06-1.png" id="3_dvtdg"]
-[ext_resource type="AudioStream" uid="uid://dc4dnviehefgr" path="res://sounds/som dano.wav" id="13_sqbqa"]
-[ext_resource type="AudioStream" uid="uid://b1pn160v2ilt3" path="res://sounds/som morte.wav" id="14_s8ybf"]
+[ext_resource type="AudioStream" uid="uid://bss66urwleewv" path="res://sounds/som dano.wav" id="13_sqbqa"]
+[ext_resource type="AudioStream" uid="uid://dxilhsayebn2w" path="res://sounds/som morte.wav" id="14_s8ybf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_srh2m"]
 atlas = ExtResource("2_qonaf")
@@ -31,16 +30,16 @@ region = Rect2(32, 32, 32, 32)
 atlas = ExtResource("2_qonaf")
 region = Rect2(64, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sqbqa"]
-atlas = ExtResource("3_dvtdg")
+[sub_resource type="AtlasTexture" id="AtlasTexture_32ssj"]
+atlas = ExtResource("2_qonaf")
 region = Rect2(0, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s8ybf"]
-atlas = ExtResource("3_dvtdg")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qonaf"]
+atlas = ExtResource("2_qonaf")
 region = Rect2(32, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n67r8"]
-atlas = ExtResource("3_dvtdg")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvtdg"]
+atlas = ExtResource("2_qonaf")
 region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ed7m2"]
@@ -87,13 +86,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sqbqa")
+"texture": SubResource("AtlasTexture_32ssj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s8ybf")
+"texture": SubResource("AtlasTexture_qonaf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n67r8")
+"texture": SubResource("AtlasTexture_dvtdg")
 }],
 "loop": true,
 "name": &"rigth",
@@ -118,7 +117,7 @@ animations = [{
 size = Vector2(40, 45.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qonaf"]
-size = Vector2(61.53602, 48)
+size = Vector2(61.536, 48)
 
 [sub_resource type="Animation" id="Animation_uq6ot"]
 length = 0.001
@@ -171,8 +170,9 @@ visibility_layer = 2
 position = Vector2(3, -7)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_s6dug")
-animation = &"rigth"
+animation = &"up"
 autoplay = "rigth"
+frame_progress = 0.809237
 speed_scale = 0.8
 
 [node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D"]
@@ -196,7 +196,7 @@ target_position = Vector2(11, 0)
 position = Vector2(-101, 15)
 
 [node name="collision" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(103.977554, -20)
+position = Vector2(103.978, -20)
 shape = SubResource("RectangleShape2D_qonaf")
 debug_color = Color(0.853333, 0.354964, 0.279595, 0.42)
 
