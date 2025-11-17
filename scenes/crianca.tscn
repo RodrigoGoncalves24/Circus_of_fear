@@ -236,10 +236,32 @@ texture = ExtResource("5_vruit")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
+[node name="heart4" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(37, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart4"]
+position = Vector2(22, 22)
+scale = Vector2(2.415, 2.415)
+texture = ExtResource("5_vruit")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="heart5" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(37, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart5"]
+position = Vector2(22, 22)
+scale = Vector2(2.415, 2.415)
+texture = ExtResource("5_vruit")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
 [node name="FearBar" parent="health_bar" instance=ExtResource("6_fowc3")]
-offset_left = 134.0
+offset_left = 220.0
 offset_top = 8.0
-offset_right = 321.0
+offset_right = 407.0
 offset_bottom = 35.0
 
 [node name="damage" type="AnimationPlayer" parent="."]

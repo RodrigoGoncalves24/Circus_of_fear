@@ -36,7 +36,7 @@ func _physics_process(delta):
 	move_8way(delta)
 
 var hearts_list : Array[TextureRect]
-var health = 3
+var health = 5
 var is_dead = false # Variável para evitar chamadas de dano/morte após o jogador morrer
 
 func _ready() -> void:
