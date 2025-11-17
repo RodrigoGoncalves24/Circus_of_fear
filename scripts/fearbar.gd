@@ -1,26 +1,22 @@
 extends ProgressBar
 
-@onready var timer = $Timer
-@onready var progress_bar = $ProgressBar
+var fear = 0.0 : 
+	set = _set_fear,
+	get = _get_fear
 
-var fear = 0 : set = _set_fear
-
-func _set_fear(new_fear):
-	var prev_fear = fear
-	fear = min(max_value, new_fear)
-	value = fear
+func _set_fear(_new_fear):
+	value = _new_fear
 	
-	if fear < prev_fear:
-		timer.start()
+func _get_fear() -> float:
+	return value
+	
+func _ready():
+	value = fear
+	$Label.hide()
+
+func _add_fear(_new_fear):
+	value += _new_fear
+	if value == 100:
+		$Label.show()
 	else:
-		progress_bar.value = fear
-	
-func init_fear(_fear):
-	fear = _fear
-	max_value = fear
-	value = fear
-	progress_bar.max_value = fear
-	progress_bar.value = fear
-
-func _on_timer_timeout() -> void:
-	progress_bar.value = fear
+		$Label.hide()

@@ -7,6 +7,8 @@ extends CharacterBody2D
 @onready var hurt_timer = $hurt_timer
 @onready var som_dano = $som_dano
 @onready var som_morte = $som_morte
+@onready var fear_bar = $health_bar/FearBar
+
 #Movimentação da criança
 func animate():
 	
@@ -48,6 +50,9 @@ func _ready() -> void:
 	update_heart_display()
 
 func take_damage():
+	fear_bar._add_fear(fear_bar.step)
+	print("FEAR: ", fear_bar.fear)
+	
 	# Impede que o jogador sofra mais dano se já estiver morto
 	if is_dead:
 		return
@@ -60,7 +65,7 @@ func take_damage():
 		hurt_timer.start()
 		await hurt_timer.timeout
 		damage.play("RESET")
-	
+			
 	if health <= 0:
 		die()
 
