@@ -168,7 +168,7 @@ script = ExtResource("1_wbya0")
 clip_children = 2
 scale = Vector2(1.8, 1.8)
 sprite_frames = SubResource("SpriteFrames_2pg2d")
-animation = &"down"
+animation = &"right"
 speed_scale = 0.8
 
 [node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D"]
@@ -264,6 +264,10 @@ offset_top = 8.0
 offset_right = 407.0
 offset_bottom = 35.0
 
+[node name="Inventory" type="HBoxContainer" parent="health_bar"]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="damage" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_tn6hh")
@@ -277,7 +281,7 @@ position = Vector2(-0.020256, 0.994827)
 zoom = Vector2(1.8, 1.8)
 limit_left = 0
 limit_top = 0
-limit_right = 1088
+limit_right = 1209
 limit_bottom = 704
 limit_smoothed = true
 
