@@ -1,9 +1,9 @@
 [gd_scene load_steps=25 format=3 uid="uid://dtb3f30q5q38i"]
 
-[ext_resource type="Script" uid="uid://cs525i68gvqs3" path="res://scripts/boss.gd" id="1_wqpjq"]
+[ext_resource type="Script" uid="uid://bam3ms53l0ij" path="res://scripts/boss.gd" id="1_wqpjq"]
 [ext_resource type="Texture2D" uid="uid://crexoppqvuxlt" path="res://textures/clown.png" id="2_2cdgk"]
 [ext_resource type="PackedScene" uid="uid://bqslmhyyw4av2" path="res://scenes/hitbox.tscn" id="3_qsl3t"]
-[ext_resource type="Script" uid="uid://h7a6st1vkx8f" path="res://scripts/hitboxBoss.gd" id="4_2avx2"]
+[ext_resource type="Script" uid="uid://bvsg8qnmvl06t" path="res://scripts/hitboxBoss.gd" id="4_2avx2"]
 [ext_resource type="AudioStream" uid="uid://dc4dnviehefgr" path="res://sounds/som dano.wav" id="5_5f346"]
 [ext_resource type="AudioStream" uid="uid://b1pn160v2ilt3" path="res://sounds/som morte.wav" id="6_0onds"]
 
@@ -115,10 +115,25 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cdgk"]
-size = Vector2(40, 53)
+size = Vector2(29, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsl3t"]
-size = Vector2(48, 57)
+size = Vector2(39, 50)
+
+[sub_resource type="Animation" id="Animation_e1yhm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteBoss/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_tj5kv"]
 resource_name = "damage_to_boss"
@@ -136,21 +151,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 0, 0, 0.5019608), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_e1yhm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SpriteBoss/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pbxxu"]
@@ -176,7 +176,7 @@ color = Color(1, 0, 0, 0)
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -2.5)
+position = Vector2(-0.5, 2)
 shape = SubResource("RectangleShape2D_2cdgk")
 
 [node name="RayCast2DBoss" type="RayCast2D" parent="."]
@@ -190,7 +190,7 @@ position = Vector2(-101, 15)
 script = ExtResource("4_2avx2")
 
 [node name="collision" type="CollisionShape2D" parent="hitboxBoss"]
-position = Vector2(100, -17.5)
+position = Vector2(100.5, -14)
 shape = SubResource("RectangleShape2D_qsl3t")
 debug_color = Color(0.853333, 0.354964, 0.279595, 0.42)
 
@@ -199,11 +199,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_pbxxu")
 }
 
-[node name="hurtTimer" type="Timer" parent="."]
-one_shot = true
-
 [node name="som_dano" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_5f346")
 
 [node name="som_morte" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_0onds")
+
+[node name="hurt_timer" type="Timer" parent="."]
+one_shot = true

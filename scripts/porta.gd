@@ -15,17 +15,13 @@ func _ready() -> void:
 	if $SceneLimitPrev:
 		scene_limit_prev = $SceneLimitPrev
 		scene_limit_prev.connect("body_entered", Callable(self, "_on_scene_limit_prev_entered"))
-		
-func _physics_process(delta: float) -> void:
-	#if monsters_count == 0:
-	if Input.is_action_just_pressed("level_cleared"):
-		toggle_level_status()
-	
-func toggle_level_status():
-	level_cleared = not level_cleared
-	if level_cleared:
+
+func toggle_level_status(isOpen : bool = false):
+	if isOpen:
+		level_cleared = true
 		abrir_porta()
 	else:
+		level_cleared = false
 		fechar_porta()
 	print("Level cleared: " + str(level_cleared))
 
@@ -42,9 +38,3 @@ func fechar_porta():
 func _on_scene_limit_body_entered(body: CharacterBody2D) -> void:
 	if game and level_cleared:
 		game.proxima_fase()
-
-func _on_scene_limit_prev_body_entered(body: CharacterBody2D) -> void:
-	print("vai voltar")
-	#TODO: MOVER ESSA PARTE PARA UM NOVO SCRIPT DE "PASSAGEM" OU ALGO ASSIM
-	if game:
-		game.fase_anterior()

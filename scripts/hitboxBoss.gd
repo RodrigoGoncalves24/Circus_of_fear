@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var damage = $"../damage"
-@onready var hurt_timer = $"../hurtTimer"
+@onready var hurt_timer = $"../hurt_timer"
 @onready var som_dano = $"../som_dano"
 @onready var som_morte = $"../som_morte"
 

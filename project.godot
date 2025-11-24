@@ -22,6 +22,7 @@ mouse_cursor/custom_image="uid://db02bf87fphen"
 [global_group]
 
 portas="Conjunto de portas"
+monstros=""
 
 [input]
 

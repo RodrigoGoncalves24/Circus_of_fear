@@ -3,10 +3,8 @@
 [ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://textures/tileset.tres" id="1_h23n6"]
 [ext_resource type="PackedScene" uid="uid://bmdxft8utt8bc" path="res://scenes/porta.tscn" id="2_ha73p"]
 [ext_resource type="PackedScene" uid="uid://der53w3qs2ant" path="res://scenes/crianca.tscn" id="2_uwxec"]
-[ext_resource type="PackedScene" path="res://scenes/boss.tscn" id="4_1pn4d"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3c0s"]
-size = Vector2(11.931335, 112)
+[ext_resource type="PackedScene" uid="uid://dtb3f30q5q38i" path="res://scenes/boss.tscn" id="4_1pn4d"]
+[ext_resource type="PackedScene" uid="uid://dkfbcc3tnpjlr" path="res://scenes/passagem.tscn" id="5_ah8om"]
 
 [node name="Level" type="Node"]
 
@@ -30,22 +28,24 @@ scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAFAAEAAAAEAAcAAAAIAAEAAAAAAAkAAAAKAAIAAAAIAAYAAAAMABMAAAAJAAUAAAAaAAgAAAAIAAYAAAAfAAsAAAAHAAcAAAAiAAwAAAAEAAYAABAZAAQAAAAJAAUAAAAdAAYAAAAJAAUAAAAFAAgAAAAJAAUAABAiABAAAAABAAkAABAgAAEAAAAEAAcAAAAdAAEAAAAAAAkAAAASAAEAAAAEAAcAAAAPAAEAAAAAAAkAAAAVAAEAAAAAAAkAAAARAAwAAAAJAAUAAAAHAAMAAAAJAAQAABADAAIAAAAFAAYAABAPAAYAAAAIAAYAAAAVABIAAAAIAAYAAAAJAAwAAAAIAAYAAAAVAAMAAAAHAAcAAAAGABMAAAAHAAcAAAAeABQAAAAHAAcAAAAXAA4AAAAHAAcAAAAOAAkAAAAHAAcAAAAIAAYAAAABAAkAABADAA4AAAABAAkAAAADABEAAAABAAkAAAADABQAAAAFAAYAADAJAA4AAAAJAAQAAAANAAYAAAABAAkAAAAeAA4AAAABAAkAAAAZAA4AAAABAAkAABAhAAQAAAABAAkAABAhAAgAAAABAAkAABA=")
 tile_set = ExtResource("1_h23n6")
 
-[node name="SceneLimitPrev" type="Area2D" parent="Cenario"]
-position = Vector2(24, 513)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/SceneLimitPrev"]
-position = Vector2(0.48051453, 0.1635437)
-shape = SubResource("RectangleShape2D_b3c0s")
-disabled = true
-
 [node name="Crianca" parent="." instance=ExtResource("2_uwxec")]
 position = Vector2(90, 509.00003)
 scale = Vector2(0.75, 0.75)
+
+[node name="Camera2D" parent="Crianca" index="8"]
+limit_right = 1215
 
 [node name="Porta" parent="." instance=ExtResource("2_ha73p")]
 position = Vector2(1122, 224)
 scale = Vector2(2, 2)
 
-[node name="Boss" parent="." instance=ExtResource("4_1pn4d")]
+[node name="Boss" parent="." groups=["monstros"] instance=ExtResource("4_1pn4d")]
 position = Vector2(651, 243)
 scale = Vector2(3, 3)
+
+[node name="SceneLimitPrev" parent="." instance=ExtResource("5_ah8om")]
+position = Vector2(-7, 511)
+
+[connection signal="body_entered" from="SceneLimitPrev" to="SceneLimitPrev" method="_on_body_entered"]
+
+[editable path="Crianca"]

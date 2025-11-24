@@ -3,7 +3,7 @@ extends Node2D
 @onready var ponto_disparo: Marker2D = $ponto_disparo
 @export var disparo_cooldown: float  = 0.8 #tempo entre disparo
 @onready var som_disparo = $som_disparo
-@onready var MAX_DISPARO : int = 5
+@onready var MAX_DISPARO : int = 20
 @onready var count_disparo: int = 0
 
 const disparo = preload("res://scenes/disparo.tscn")

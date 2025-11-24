@@ -3,9 +3,7 @@
 [ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://textures/tileset.tres" id="1_yk4f3"]
 [ext_resource type="PackedScene" uid="uid://der53w3qs2ant" path="res://scenes/crianca.tscn" id="3_rr1tt"]
 [ext_resource type="PackedScene" uid="uid://pigi6kmerpyx" path="res://scenes/chest.tscn" id="4_7ewpb"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3c0s"]
-size = Vector2(11.931335, 112)
+[ext_resource type="PackedScene" uid="uid://dkfbcc3tnpjlr" path="res://scenes/passagem.tscn" id="4_rbbjd"]
 
 [node name="Level" type="Node"]
 
@@ -29,14 +27,6 @@ scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAMABMAAAAJAAUAAAADAA0AAAABAAkAAAADABEAAAABAAkAAAADABQAAAAFAAYAADAHAAwAAAAJAAQAAAASAA0AAAABAAkAABASABEAAAABAAkAABAHAAoAAAAAAAkAAAAOAAoAAAAAAAkAAAA=")
 tile_set = ExtResource("1_yk4f3")
 
-[node name="SceneLimitPrev" type="Area2D" parent="Cenario"]
-position = Vector2(24, 513)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/SceneLimitPrev"]
-position = Vector2(0.48051453, 0.1635437)
-shape = SubResource("RectangleShape2D_b3c0s")
-disabled = true
-
 [node name="Crianca" parent="." instance=ExtResource("3_rr1tt")]
 position = Vector2(90, 509.00003)
 scale = Vector2(0.75, 0.75)
@@ -49,5 +39,10 @@ limit_right = 639
 [node name="Chest" parent="." instance=ExtResource("4_7ewpb")]
 position = Vector2(550, 502)
 scale = Vector2(1.5, 1.5)
+
+[node name="SceneLimitPrev" parent="." instance=ExtResource("4_rbbjd")]
+position = Vector2(-12, 510)
+
+[connection signal="body_entered" from="SceneLimitPrev" to="SceneLimitPrev" method="_on_body_entered"]
 
 [editable path="Crianca"]

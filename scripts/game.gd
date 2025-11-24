@@ -4,20 +4,32 @@ extends Node2D
 @onready var player: CharacterBody2D
 @onready var tela_pause: Control = $UI/Game_Paused
 @onready var current_level = 1
+@onready var porta: StaticBody2D
 
-@export var monsters_count = 2
+@export var monsters_count : int = 0
 
 func _ready() -> void:
 	var qtd_filhos = get_child_count()
 	level = get_child(qtd_filhos-1)
 	player = level.get_node("Crianca")
 	tela_pause.hide()
+	if level.get_node("Cenario").has_node("Porta"):
+		porta = level.get_node("Cenario").get_node("Porta")
 	
 func _physics_process(delta: float) -> void:
+	monsters_count = get_tree().get_nodes_in_group("monstros").size()
+	print("MONSTROS: " + str(monsters_count))
+	
+	if monsters_count == 0:
+		porta.toggle_level_status(true)
+	
 	if Input.is_action_just_pressed("pause") and get_tree().paused:
 		_Unpause()
 	elif Input.is_action_just_pressed("pause"):
 		_Pause()
+	
+func _get_monsters_count() -> int:
+	return monsters_count
 	
 func _Pause():
 	get_tree().paused = true
@@ -47,4 +59,5 @@ func goto_scene(path: String):
 	var new_scene : PackedScene = ResourceLoader.load(path)
 	level = new_scene.instantiate()
 	get_tree().get_root().get_child(0).add_child(level)
-	
+	if level.get_node("Cenario").has_node("Porta"):
+		porta = level.get_node("Cenario").get_node("Porta")

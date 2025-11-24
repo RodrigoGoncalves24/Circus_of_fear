@@ -9,9 +9,7 @@
 [ext_resource type="Resource" uid="uid://vfoj7wg1cn7" path="res://scripts/items/key.tres" id="7_1l7qh"]
 [ext_resource type="Resource" uid="uid://d3l6i7t1fwwu3" path="res://scripts/items/heart.tres" id="8_oe8rc"]
 [ext_resource type="PackedScene" uid="uid://7xxut8dm6l3j" path="res://scenes/zumbi.tscn" id="9_ddg1o"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3c0s"]
-size = Vector2(11.931335, 112)
+[ext_resource type="PackedScene" uid="uid://dkfbcc3tnpjlr" path="res://scenes/passagem.tscn" id="10_que50"]
 
 [node name="Level" type="Node"]
 
@@ -41,17 +39,12 @@ scale = Vector2(2, 2)
 collision_layer = 1
 collision_mask = 1
 
-[node name="SceneLimitPrev" type="Area2D" parent="Cenario"]
-position = Vector2(24, 513)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/SceneLimitPrev"]
-position = Vector2(0.48051453, 0.1635437)
-shape = SubResource("RectangleShape2D_b3c0s")
-disabled = true
-
 [node name="Crianca" parent="." instance=ExtResource("3_lug6k")]
-position = Vector2(90, 509.00003)
+position = Vector2(29, 510.00003)
 scale = Vector2(0.75, 0.75)
+
+[node name="Camera2D" parent="Crianca" index="8"]
+limit_right = 1215
 
 [node name="Chest" parent="." instance=ExtResource("4_u7bi7")]
 position = Vector2(169, 114.00001)
@@ -63,11 +56,18 @@ ExtResource("7_1l7qh"): 1,
 ExtResource("8_oe8rc"): 1
 })
 
-[node name="Zumbi" parent="." instance=ExtResource("9_ddg1o")]
+[node name="Zumbi" parent="." groups=["monstros"] instance=ExtResource("9_ddg1o")]
 position = Vector2(494.00003, 615)
 
-[node name="Zumbi2" parent="." instance=ExtResource("9_ddg1o")]
+[node name="Zumbi2" parent="." groups=["monstros"] instance=ExtResource("9_ddg1o")]
 position = Vector2(301, 118)
 
-[node name="Zumbi3" parent="." instance=ExtResource("9_ddg1o")]
+[node name="Zumbi3" parent="." groups=["monstros"] instance=ExtResource("9_ddg1o")]
 position = Vector2(954, 142)
+
+[node name="SceneLimitPrev" parent="." instance=ExtResource("10_que50")]
+position = Vector2(-7, 508)
+
+[connection signal="body_entered" from="SceneLimitPrev" to="SceneLimitPrev" method="_on_body_entered"]
+
+[editable path="Crianca"]

@@ -7,13 +7,17 @@ extends CharacterBody2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 @export var speed: float = 100.0
 @onready var player = get_parent().get_node("Crianca")
+@onready var damage = $damage
+@onready var som_dano = $som_dano
+@onready var hurt_timer = $hurt_timer
+@onready var is_dead = false
+@onready var health = 5
 	
 func _physics_process(delta: float) -> void:
 	if player:
 		var direction = (player.global_position - global_position).normalized()
 		velocity = direction * speed;
 		move_and_slide()
-		
 		
 		if abs(direction.x) > abs(direction.y):
 			zumbi.play("rigth")
@@ -26,11 +30,20 @@ func _physics_process(delta: float) -> void:
 		else:
 			zumbi.play("down")
 
-
 func _ready():
 	hitbox.body_entered.connect(on_hitbox_body_entered)
 
 func on_hitbox_body_entered(body: Node2D):
-	if body.has_method("take_damage"):
-		# Chama a função take_damage() no script do jogador
-		body.take_damage()
+	if is_dead:
+		return
+	
+	if health > 0:
+		health -= 1
+		damage.play("damage to player")
+		som_dano.play()
+		hurt_timer.start()
+		await hurt_timer.timeout
+		damage.play("RESET")
+			
+	if health <= 0:
+		is_dead = true
