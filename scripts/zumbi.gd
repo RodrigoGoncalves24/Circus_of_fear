@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var player = get_parent().get_node("Crianca")
 @onready var damage = $damage
 @onready var som_dano = $som_dano
+@onready var som_morte = $som_morte
 @onready var hurt_timer = $hurt_timer
 @onready var is_dead = false
 @onready var health = 5
@@ -34,16 +35,6 @@ func _ready():
 	hitbox.body_entered.connect(on_hitbox_body_entered)
 
 func on_hitbox_body_entered(body: Node2D):
-	if is_dead:
-		return
-	
-	if health > 0:
-		health -= 1
-		damage.play("damage to player")
-		som_dano.play()
-		hurt_timer.start()
-		await hurt_timer.timeout
-		damage.play("RESET")
-			
-	if health <= 0:
-		is_dead = true
+	if body.has_method("take_damage"):
+		# Chama a função take_damage() no script do jogador
+		body.take_damage()

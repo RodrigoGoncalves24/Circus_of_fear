@@ -32,16 +32,6 @@ func _ready():
 	hitbox.body_entered.connect(on_hitbox_body_entered)
 
 func on_hitbox_body_entered(body: Node2D):
-	if is_dead:
-		return
-	
-	if health > 0:
-		health -= 1
-		damage.play("damage to player")
-		som_dano.play()
-		hurt_timer.start()
-		await hurt_timer.timeout
-		damage.play("RESET")
-			
-	if health <= 0:
-		is_dead = true
+	if body.has_method("take_damage"):
+		# Chama a função take_damage() no script do jogador
+		body.take_damage()
