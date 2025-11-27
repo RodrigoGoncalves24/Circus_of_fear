@@ -13,7 +13,11 @@ config_version=5
 config/name="Circus_of_Fear"
 run/main_scene="uid://dvdyj3uieok3l"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bsgck4hry32kp"
+
+[autoload]
+
+Global="*res://scripts/global.gd"
 
 [display]
 

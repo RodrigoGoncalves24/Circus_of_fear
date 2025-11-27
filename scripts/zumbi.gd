@@ -7,11 +7,6 @@ extends CharacterBody2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 @export var speed: float = 100.0
 @onready var player = get_parent().get_node("Crianca")
-@onready var damage = $damage
-@onready var som_dano = $som_dano
-@onready var som_morte = $som_morte
-@onready var hurt_timer = $hurt_timer
-@onready var is_dead = false
 @onready var health = 5
 	
 func _physics_process(delta: float) -> void:

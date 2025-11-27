@@ -1,23 +1,30 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwnsf80ba1rlw"]
 
-[ext_resource type="Script" uid="uid://t465hbkuervt" path="res://scripts/fearbar.gd" id="1_jg2uv"]
+[ext_resource type="Script" uid="uid://c0mi4rd0c06s2" path="res://scripts/fearbar.gd" id="1_jg2uv"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10fn2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mtqqr"]
+bg_color = Color(0.6509804, 0.6509804, 0.6509804, 0.26666668)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jg2uv"]
-bg_color = Color(0.16346213, 0.115509175, 0.5712295, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ai10v"]
+bg_color = Color(0.38391727, 0.09693774, 0.6195078, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
 [node name="FearBar" type="ProgressBar"]
+process_mode = 1
 z_index = 1
 offset_right = 187.0
 offset_bottom = 27.0
-theme_override_styles/background = SubResource("StyleBoxEmpty_10fn2")
-theme_override_styles/fill = SubResource("StyleBoxFlat_jg2uv")
-step = 25.0
+theme_override_styles/background = SubResource("StyleBoxFlat_mtqqr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ai10v")
+max_value = 120.0
+step = 40.0
 show_percentage = false
 script = ExtResource("1_jg2uv")
 

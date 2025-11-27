@@ -15,4 +15,3 @@ visible = false
 top_level = true
 
 [node name="Level" parent="." instance=ExtResource("1_fd8wr")]
-process_mode = 1

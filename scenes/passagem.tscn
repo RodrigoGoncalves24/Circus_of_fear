@@ -1,14 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://dkfbcc3tnpjlr"]
 
-[ext_resource type="Script" uid="uid://cm1cceuj8shyt" path="res://scripts/passagem.gd" id="1_42rj3"]
+[ext_resource type="Script" uid="uid://crvwwv1d5x53k" path="res://scripts/passagem.gd" id="1_42rj3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6j14n"]
-size = Vector2(11.931335, 112)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g15ti"]
+normal = Vector2(1, 0)
 
 [node name="Passagem" type="Area2D"]
 script = ExtResource("1_42rj3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.48051453, 0.1635437)
-shape = SubResource("RectangleShape2D_6j14n")
-disabled = true
+shape = SubResource("WorldBoundaryShape2D_g15ti")

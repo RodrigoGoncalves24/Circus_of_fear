@@ -6,16 +6,12 @@ extends StaticBody2D
 @onready var aberta = $Aberta
 @onready var collider = $ColisaoPorta
 @onready var scene_limit = $SceneLimit
-var scene_limit_prev
 
 @onready var level_cleared: bool = false
 
 func _ready() -> void:
 	scene_limit.connect("body_entered", Callable(self, "_on_scene_limit_entered"))
-	if $SceneLimitPrev:
-		scene_limit_prev = $SceneLimitPrev
-		scene_limit_prev.connect("body_entered", Callable(self, "_on_scene_limit_prev_entered"))
-
+	
 func toggle_level_status(isOpen : bool = false):
 	if isOpen:
 		level_cleared = true
@@ -37,4 +33,5 @@ func fechar_porta():
 
 func _on_scene_limit_body_entered(body: CharacterBody2D) -> void:
 	if game and level_cleared:
+		Global.last_used = "porta"
 		game.proxima_fase()

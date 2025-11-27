@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dkfbcc3tnpjlr" path="res://scenes/passagem.tscn" id="10_que50"]
 
 [node name="Level" type="Node"]
+process_mode = 1
 
 [node name="Cenario" type="StaticBody2D" parent="."]
 show_behind_parent = true
@@ -39,14 +40,10 @@ scale = Vector2(2, 2)
 collision_layer = 1
 collision_mask = 1
 
-[node name="Crianca" parent="." instance=ExtResource("3_lug6k")]
-position = Vector2(29, 510.00003)
-scale = Vector2(0.75, 0.75)
+[node name="Passagem" parent="Cenario" instance=ExtResource("10_que50")]
+position = Vector2(-3, 508)
 
-[node name="Camera2D" parent="Crianca" index="8"]
-limit_right = 1215
-
-[node name="Chest" parent="." instance=ExtResource("4_u7bi7")]
+[node name="Chest" parent="Cenario" instance=ExtResource("4_u7bi7")]
 position = Vector2(169, 114.00001)
 scale = Vector2(1.5, 1.5)
 items = Dictionary[ExtResource("5_ty2me"), int]({
@@ -55,6 +52,13 @@ ExtResource("6_k2c7h"): 5,
 ExtResource("7_1l7qh"): 1,
 ExtResource("8_oe8rc"): 1
 })
+
+[node name="Crianca" parent="." instance=ExtResource("3_lug6k")]
+position = Vector2(29, 510.00003)
+scale = Vector2(0.75, 0.75)
+
+[node name="Camera2D" parent="Crianca" index="8"]
+limit_right = 1215
 
 [node name="Zumbi" parent="." groups=["monstros"] instance=ExtResource("9_ddg1o")]
 position = Vector2(494.00003, 615)
@@ -65,9 +69,6 @@ position = Vector2(301, 118)
 [node name="Zumbi3" parent="." groups=["monstros"] instance=ExtResource("9_ddg1o")]
 position = Vector2(954, 142)
 
-[node name="SceneLimitPrev" parent="." instance=ExtResource("10_que50")]
-position = Vector2(-7, 508)
-
-[connection signal="body_entered" from="SceneLimitPrev" to="SceneLimitPrev" method="_on_body_entered"]
+[connection signal="body_entered" from="Cenario/Passagem" to="Cenario/Passagem" method="_on_body_entered"]
 
 [editable path="Crianca"]

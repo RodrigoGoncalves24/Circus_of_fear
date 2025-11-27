@@ -1,9 +1,9 @@
 [gd_scene load_steps=25 format=3 uid="uid://dtb3f30q5q38i"]
 
-[ext_resource type="Script" uid="uid://bam3ms53l0ij" path="res://scripts/boss.gd" id="1_wqpjq"]
+[ext_resource type="Script" uid="uid://clh2us2jk4cy0" path="res://scripts/boss.gd" id="1_wqpjq"]
 [ext_resource type="Texture2D" uid="uid://crexoppqvuxlt" path="res://textures/clown.png" id="2_2cdgk"]
 [ext_resource type="PackedScene" uid="uid://bqslmhyyw4av2" path="res://scenes/hitbox.tscn" id="3_qsl3t"]
-[ext_resource type="Script" uid="uid://bvsg8qnmvl06t" path="res://scripts/hitboxBoss.gd" id="4_2avx2"]
+[ext_resource type="Script" uid="uid://wjf2swnawx0p" path="res://scripts/hitboxBoss.gd" id="4_2avx2"]
 [ext_resource type="AudioStream" uid="uid://dc4dnviehefgr" path="res://sounds/som dano.wav" id="5_5f346"]
 [ext_resource type="AudioStream" uid="uid://b1pn160v2ilt3" path="res://sounds/som morte.wav" id="6_0onds"]
 
@@ -160,6 +160,7 @@ _data = {
 }
 
 [node name="Boss" type="CharacterBody2D"]
+process_mode = 1
 script = ExtResource("1_wqpjq")
 
 [node name="SpriteBoss" type="AnimatedSprite2D" parent="."]
