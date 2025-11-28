@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://bupie404oos33"]
+
+[ext_resource type="Script" uid="uid://dqvmf50fm0elc" path="res://scripts/boss_projectile.gd" id="1_2n0ct"]
+[ext_resource type="Texture2D" uid="uid://kqmdgnbjafa1" path="res://textures/balao.png" id="2_fnfp1"]
+[ext_resource type="Texture2D" uid="uid://cex5h3iyn1cf0" path="res://textures/explosao.png" id="3_vukqs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c5fku"]
+radius = 19.0
+height = 50.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n0ct"]
+atlas = ExtResource("2_fnfp1")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnfp1"]
+atlas = ExtResource("2_fnfp1")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vukqs"]
+atlas = ExtResource("3_vukqs")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c5fku"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n0ct")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnfp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vukqs")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 5.0
+}]
+
+[node name="BossProjectile" type="Area2D"]
+script = ExtResource("1_2n0ct")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, -4)
+shape = SubResource("CapsuleShape2D_c5fku")
+
+[node name="AnimBalloon" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -1.0000004)
+scale = Vector2(0.06, 0.06)
+sprite_frames = SubResource("SpriteFrames_c5fku")

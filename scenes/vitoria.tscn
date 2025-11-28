@@ -1,27 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://bpggd4gu6vkcn"]
+[gd_scene load_steps=10 format=3 uid="uid://cowun2fucccmm"]
 
-[ext_resource type="Script" uid="uid://dsw4nl466nfr8" path="res://scripts/gameover.gd" id="1_2mkfd"]
-[ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="1_v8l1s"]
+[ext_resource type="Script" uid="uid://cdc4cdqfs0kq2" path="res://scripts/vitoria.gd" id="1_3oowa"]
+[ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="1_5w2qk"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_dy3ie"]
-font = ExtResource("1_v8l1s")
+[sub_resource type="LabelSettings" id="LabelSettings_3oowa"]
+font = ExtResource("1_5w2qk")
 font_size = 300
 font_color = Color(0.6877407, 0.6082873, 0.60804355, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mkfd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7a54b"]
 bg_color = Color(0.22706568, 0.12724975, 0.1651349, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8i2o"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnk0s"]
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy3ie"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_desg2"]
 bg_color = Color(0.36034617, 0.21654785, 0.2722447, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
@@ -67,14 +67,14 @@ _data = {
 &"victory animation": SubResource("Animation_dy3ie")
 }
 
-[node name="Game Over" type="Control"]
+[node name="Victory" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_2mkfd")
+script = ExtResource("1_3oowa")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -88,8 +88,8 @@ offset_left = 270.0
 offset_top = 214.0
 offset_right = 870.0
 offset_bottom = 384.0
-text = "Game Over"
-label_settings = SubResource("LabelSettings_dy3ie")
+text = "Victory!"
+label_settings = SubResource("LabelSettings_3oowa")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ColorRect"]
@@ -99,11 +99,11 @@ offset_top = 388.0
 offset_right = 870.0
 offset_bottom = 453.0
 theme_override_colors/font_color = Color(0.6862745, 0.60784316, 0.60784316, 1)
-theme_override_fonts/font = ExtResource("1_v8l1s")
+theme_override_fonts/font = ExtResource("1_5w2qk")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_2mkfd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7a54b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nnk0s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_desg2")
 text = "Play Again"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
