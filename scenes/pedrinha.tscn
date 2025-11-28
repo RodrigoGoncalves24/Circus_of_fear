@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpk3u6lxpb8kv"]
+
+[ext_resource type="Texture2D" uid="uid://ibrfllhr7o0y" path="res://textures/Rocks.png" id="1_4twe8"]
+[ext_resource type="Script" uid="uid://cjeddthyyptx6" path="res://scripts/pedrinha.gd" id="1_iqv0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u60bq"]
+size = Vector2(12.5, 10)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_iqv0m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 2)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_u60bq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.40331, 1.6709)
+scale = Vector2(0.8, 0.677)
+texture = ExtResource("1_4twe8")
+region_enabled = true
+region_rect = Rect2(1, 1, 14, 13)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

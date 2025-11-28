@@ -1,9 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://pigi6kmerpyx"]
+[gd_scene load_steps=7 format=3 uid="uid://bxi6nebvim50h"]
 
-[ext_resource type="Script" uid="uid://b71l1g44vifyn" path="res://scripts/chest.gd" id="1_sy5e1"]
-[ext_resource type="Texture2D" uid="uid://dgl2oieibx2qi" path="res://textures/RPG Chests.png" id="2_gqd3d"]
+[ext_resource type="Texture2D" uid="uid://bvst7cfnr4eqb" path="res://textures/RPG Chests.png" id="1_1ywl6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yue2o"]
+[sub_resource type="GDScript" id="GDScript_1ywl6"]
+script/source = "extends Node2D
+
+signal entregou_item(item_data)
+@onready var animations: AnimationPlayer = $AnimationPlayer
+@export var item_tipo: String = \"municao\"
+@export var quantidade := 5
+var aberto = false
+
+func _on_body_entered(body):
+	if body.is_in_group(\"crianca\") and not aberto:
+		aberto = true
+		animations.play(\"open\") 
+		await animations.animation_finished
+		emitir_item(body)
+		
+func emitir_item(player):
+	var item_data = {
+		\"tipo\": item_tipo,
+		\"quantiade\": quantidade
+		}
+	emit_signal(\"entregou item\", item_data)
+	
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boyy4"]
 size = Vector2(18, 11)
 
 [sub_resource type="Animation" id="Animation_w02o5"]
@@ -93,15 +117,16 @@ _data = {
 &"open": SubResource("Animation_yhylo")
 }
 
-[node name="Chest" type="StaticBody2D"]
-script = ExtResource("1_sy5e1")
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_1ywl6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_yue2o")
+position = Vector2(0, -5)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_boyy4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_gqd3d")
+texture = ExtResource("1_1ywl6")
 vframes = 4
 region_enabled = true
 region_rect = Rect2(199, 8, 18, 112)

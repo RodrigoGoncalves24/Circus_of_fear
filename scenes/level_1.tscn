@@ -1,13 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://cp84g8w07pgbm"]
+[gd_scene load_steps=7 format=4 uid="uid://cp84g8w07pgbm"]
 
 [ext_resource type="PackedScene" uid="uid://der53w3qs2ant" path="res://scenes/crianca.tscn" id="1_tpjal"]
 [ext_resource type="PackedScene" uid="uid://bmdxft8utt8bc" path="res://scenes/porta.tscn" id="2_15mv3"]
 [ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://textures/tileset.tres" id="2_bswci"]
-[ext_resource type="PackedScene" uid="uid://pigi6kmerpyx" path="res://scenes/chest.tscn" id="3_rus8k"]
-[ext_resource type="Script" uid="uid://152h4obfqdmx" path="res://scripts/items/InventoryItem.gd" id="4_4nkto"]
-[ext_resource type="Resource" uid="uid://13ehaxgd4op2" path="res://scripts/items/ammo.tres" id="5_4nkto"]
-[ext_resource type="Resource" uid="uid://d3l6i7t1fwwu3" path="res://scripts/items/heart.tres" id="5_fcfvj"]
-[ext_resource type="Resource" uid="uid://vfoj7wg1cn7" path="res://scripts/items/key.tres" id="6_fcfvj"]
+[ext_resource type="PackedScene" uid="uid://k1m70i51762q" path="res://scenes/coracao.tscn" id="6_fcfvj"]
+[ext_resource type="PackedScene" uid="uid://dpk3u6lxpb8kv" path="res://scenes/pedrinha.tscn" id="6_pa8r4"]
 [ext_resource type="PackedScene" uid="uid://7xxut8dm6l3j" path="res://scenes/zumbi.tscn" id="10_2y5yt"]
 
 [node name="Level" type="Node"]
@@ -39,19 +36,12 @@ scale = Vector2(2, 2)
 collision_layer = 1
 collision_mask = 1
 
-[node name="Chest" parent="Cenario" instance=ExtResource("3_rus8k")]
-position = Vector2(319, 580)
-scale = Vector2(1.5, 1.5)
-items = Dictionary[ExtResource("4_4nkto"), int]({
-null: 0,
-ExtResource("5_4nkto"): 5,
-ExtResource("6_fcfvj"): 1,
-ExtResource("5_fcfvj"): 1
-})
-
 [node name="Crianca" parent="." instance=ExtResource("1_tpjal")]
 position = Vector2(113.945, 109.919)
 scale = Vector2(0.75, 0.75)
+
+[node name="inventory" parent="Crianca/health_bar" index="1"]
+position = Vector2(-58, 36)
 
 [node name="Camera2D" parent="Crianca" index="8"]
 limit_right = 1117
@@ -60,6 +50,18 @@ limit_right = 1117
 position = Vector2(582, 299)
 
 [node name="Zumbi2" parent="." groups=["monstros"] instance=ExtResource("10_2y5yt")]
-position = Vector2(891, 559)
+position = Vector2(753, 394)
+
+[node name="pedrinha1" parent="." instance=ExtResource("6_pa8r4")]
+position = Vector2(328, 562)
+
+[node name="pedrinha2" parent="." instance=ExtResource("6_pa8r4")]
+position = Vector2(302, 576)
+
+[node name="pedrinha3" parent="." instance=ExtResource("6_pa8r4")]
+position = Vector2(306, 553)
+
+[node name="Area2D" parent="." instance=ExtResource("6_fcfvj")]
+position = Vector2(982, 296)
 
 [editable path="Crianca"]

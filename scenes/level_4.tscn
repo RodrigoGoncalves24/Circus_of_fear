@@ -2,8 +2,8 @@
 
 [ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://textures/tileset.tres" id="1_yk4f3"]
 [ext_resource type="PackedScene" uid="uid://der53w3qs2ant" path="res://scenes/crianca.tscn" id="3_rr1tt"]
-[ext_resource type="PackedScene" uid="uid://pigi6kmerpyx" path="res://scenes/chest.tscn" id="4_7ewpb"]
 [ext_resource type="PackedScene" uid="uid://dkfbcc3tnpjlr" path="res://scenes/passagem.tscn" id="4_rbbjd"]
+[ext_resource type="PackedScene" uid="uid://gys0ervj48se" path="res://scenes/key.tscn" id="4_wom6i"]
 
 [node name="Level" type="Node"]
 process_mode = 1
@@ -31,12 +31,8 @@ tile_set = ExtResource("1_yk4f3")
 [node name="Passagem" parent="Cenario" instance=ExtResource("4_rbbjd")]
 position = Vector2(-4, 189)
 
-[node name="Chest" parent="Cenario" instance=ExtResource("4_7ewpb")]
-position = Vector2(554, 180)
-scale = Vector2(1.5, 1.5)
-
 [node name="Crianca" parent="." instance=ExtResource("3_rr1tt")]
-position = Vector2(94, 187.00003)
+position = Vector2(94, 187)
 scale = Vector2(0.75, 0.75)
 
 [node name="ColorRect" parent="Crianca/AnimatedSprite2D" index="0"]
@@ -47,6 +43,10 @@ limit_left = 1
 limit_top = 2
 limit_right = 643
 limit_bottom = 386
+
+[node name="Chave" parent="." instance=ExtResource("4_wom6i")]
+position = Vector2(560, 182)
+scale = Vector2(2, 2)
 
 [connection signal="body_entered" from="Cenario/Passagem" to="Cenario/Passagem" method="_on_body_entered"]
 

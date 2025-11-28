@@ -13,7 +13,9 @@ extends CharacterBody2D
 
 var hearts_list : Array[TextureRect]
 var is_dead = false # Variável para evitar chamadas de dano/morte após o jogador morrer
+var MAX_VIDA := 5
 
+signal get_vida(vida)
 #Movimentação da criança
 func animate():
 	
@@ -88,6 +90,21 @@ func take_damage():
 func update_heart_display():
 	for i in range(hearts_list.size()):
 		hearts_list[i].visible = i < game.player_health
+	
+func add_vida(qtd: int):
+	if game.player_health >= MAX_VIDA: # vida máxima, não coleta
+		return false
+
+	#var heart_icon := preload("res://scenes/coracao.tscn")
+	game.player_health += qtd
+	if game.player_health > MAX_VIDA:
+		game.player_health = MAX_VIDA
+		
+	update_heart_display()
+
+	emit_signal("get_vida",game.player_health)
+	return true
+		
 	
 func die():
 	is_dead = true
