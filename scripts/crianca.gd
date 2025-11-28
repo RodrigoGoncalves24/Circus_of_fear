@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 300.0
-@export var cena_disparo: PackedScene = preload("res://scenes/disparo.tscn")
+@export var cena_disparo: PackedScene = preload("res://scenes/bullet.tscn")
 @onready var sprite = $AnimatedSprite2D
 @onready var damage = $damage
 @onready var hurt_timer = $hurt_timer

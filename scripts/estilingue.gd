@@ -3,10 +3,10 @@ extends Node2D
 @onready var ponto_disparo: Marker2D = $ponto_disparo
 @export var disparo_cooldown: float  = 0.8 #tempo entre disparo
 @onready var som_disparo = $som_disparo
-@onready var MAX_DISPARO : int = 20
-@onready var count_disparo: int = 0
 
-const disparo = preload("res://scenes/disparo.tscn")
+#Sinal para atualizar o inventário em tela
+signal shot_fired(new_count)
+const shoot = preload("res://scenes/bullet.tscn")
 var pode_atirar = true
 
 func _process(delta: float) -> void:
@@ -18,11 +18,12 @@ func _process(delta: float) -> void:
 	else:
 		scale.y = 1
 
+	# Controla disparo com cooldonw
+	var municao = get_node("../municao")
 	if Input.is_action_just_pressed("tiro") and pode_atirar:
-		if count_disparo < MAX_DISPARO:
-			count_disparo += 1
+		if municao.usa_municao():
 			som_disparo.play()
-			var disparo = disparo.instantiate()
+			var disparo = shoot.instantiate()
 			get_tree().root.add_child(disparo)
 			disparo.global_position = ponto_disparo.global_position
 			disparo.rotation = rotation

@@ -1,13 +1,15 @@
-[gd_scene load_steps=27 format=3 uid="uid://der53w3qs2ant"]
+[gd_scene load_steps=29 format=3 uid="uid://der53w3qs2ant"]
 
 [ext_resource type="Script" uid="uid://ei4yqd215uc8" path="res://scripts/crianca.gd" id="1_wbya0"]
-[ext_resource type="Texture2D" uid="uid://dnmdtwi01qux" path="res://textures/PIPOYA FREE RPG Character Sprites 32x32/Male/Male 01-2.png" id="3_fowc3"]
-[ext_resource type="Script" uid="uid://bylnejo0hgbr6" path="res://scripts/interaction_component.gd" id="3_hjrcj"]
+[ext_resource type="Texture2D" uid="uid://cuktjba07ktgu" path="res://textures/PIPOYA FREE RPG Character Sprites 32x32/Male/Male 01-2.png" id="3_fowc3"]
+[ext_resource type="Script" uid="uid://cck5ga2r5san1" path="res://scripts/interaction_component.gd" id="3_hjrcj"]
 [ext_resource type="PackedScene" uid="uid://cppiemoik38er" path="res://scenes/estilingue.tscn" id="4_xbjgo"]
-[ext_resource type="Texture2D" uid="uid://dth1vw88ui272" path="res://textures/hearts.png" id="5_vruit"]
-[ext_resource type="AudioStream" uid="uid://dc4dnviehefgr" path="res://sounds/som dano.wav" id="6_eoi0d"]
+[ext_resource type="Texture2D" uid="uid://bfypmaseeiy02" path="res://textures/hearts.png" id="5_vruit"]
+[ext_resource type="AudioStream" uid="uid://b70umtkucbb01" path="res://sounds/som dano.wav" id="6_eoi0d"]
 [ext_resource type="PackedScene" uid="uid://cwnsf80ba1rlw" path="res://scenes/fearbar.tscn" id="6_fowc3"]
-[ext_resource type="AudioStream" uid="uid://b1pn160v2ilt3" path="res://sounds/som morte.wav" id="7_fowc3"]
+[ext_resource type="PackedScene" uid="uid://bu5adxf8sw0e4" path="res://scenes/inventory.tscn" id="6_uj8g8"]
+[ext_resource type="AudioStream" uid="uid://cbwgo4mpsg0tf" path="res://sounds/som morte.wav" id="7_fowc3"]
+[ext_resource type="Script" uid="uid://dn0xtvp02s3l0" path="res://scripts/municao.gd" id="10_uj8g8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7df7u"]
 atlas = ExtResource("3_fowc3")
@@ -182,7 +184,7 @@ color = Color(1, 0, 0, 0)
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_s2k80")
 
-[node name="Node2D" parent="." instance=ExtResource("4_xbjgo")]
+[node name="estilingue" parent="." instance=ExtResource("4_xbjgo")]
 position = Vector2(0, 17)
 
 [node name="InteractionComponent" type="Area2D" parent="."]
@@ -230,7 +232,7 @@ custom_minimum_size = Vector2(37, 0)
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart3"]
-position = Vector2(22, 22)
+position = Vector2(22, 23)
 scale = Vector2(2.415, 2.415)
 texture = ExtResource("5_vruit")
 region_enabled = true
@@ -258,15 +260,14 @@ texture = ExtResource("5_vruit")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
+[node name="inventory" parent="health_bar" instance=ExtResource("6_uj8g8")]
+position = Vector2(-51, 41)
+
 [node name="FearBar" parent="health_bar" instance=ExtResource("6_fowc3")]
 offset_left = 220.0
 offset_top = 8.0
 offset_right = 407.0
 offset_bottom = 35.0
-
-[node name="Inventory" type="HBoxContainer" parent="health_bar"]
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="damage" type="AnimationPlayer" parent="."]
 libraries = {
@@ -290,6 +291,9 @@ stream = ExtResource("6_eoi0d")
 
 [node name="som_morte" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_fowc3")
+
+[node name="municao" type="Node2D" parent="."]
+script = ExtResource("10_uj8g8")
 
 [connection signal="body_entered" from="InteractionComponent" to="InteractionComponent" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionComponent" to="InteractionComponent" method="_on_body_exited"]

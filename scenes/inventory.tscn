@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu5adxf8sw0e4"]
+
+[ext_resource type="Script" uid="uid://bp5lgc80hsymj" path="res://scripts/inventory.gd" id="1_hj2ta"]
+[ext_resource type="Texture2D" uid="uid://ibrfllhr7o0y" path="res://textures/Rocks.png" id="1_qw0r6"]
+[ext_resource type="FontFile" uid="uid://ffc4aeq3t0ga" path="res://textures/game_over.ttf" id="2_ty45s"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_hj2ta")
+
+[node name="BulletCount" type="Label" parent="."]
+offset_left = 102.0
+offset_top = 7.0
+offset_right = 142.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("2_ty45s")
+theme_override_font_sizes/font_size = 60
+text = ":5x"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(78, 19)
+scale = Vector2(2.07905, 1.8692)
+texture = ExtResource("1_qw0r6")
+region_enabled = true
+region_rect = Rect2(1, 1, 14, 13)

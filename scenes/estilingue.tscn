@@ -1,11 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://cppiemoik38er"]
 
-[ext_resource type="Script" uid="uid://crm28anfeu0vi" path="res://scripts/estilingue.gd" id="1_vgbqw"]
-[ext_resource type="Texture2D" uid="uid://bqvbnph5ie83" path="res://textures/estiligue.png" id="2_vgbqw"]
-[ext_resource type="AudioStream" uid="uid://ckqq246d6cc2s" path="res://sounds/som disparo.wav" id="3_x46p3"]
+[ext_resource type="Script" uid="uid://cxi6j4mkiv0kb" path="res://scripts/estilingue.gd" id="1_vgbqw"]
+[ext_resource type="Texture2D" uid="uid://d1ssk7cdvmv2b" path="res://textures/estiligue.png" id="2_vgbqw"]
+[ext_resource type="AudioStream" uid="uid://crygeq182i81g" path="res://sounds/som disparo.wav" id="3_x46p3"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vgbqw")
+disparo_cooldown = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, 4.76837e-07)

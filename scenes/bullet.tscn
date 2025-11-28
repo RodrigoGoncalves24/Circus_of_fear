@@ -1,20 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://bapd046yk7qtx"]
 
-[ext_resource type="Script" uid="uid://c0u6oi0bqjluu" path="res://scripts/disparo.gd" id="1_qxw2w"]
-[ext_resource type="Texture2D" uid="uid://donoqp5yvk8he" path="res://textures/Rocks.png" id="2_6jt3u"]
+[ext_resource type="Script" uid="uid://bih76y3p5up0x" path="res://scripts/disparo.gd" id="1_y25gk"]
+[ext_resource type="Texture2D" uid="uid://ibrfllhr7o0y" path="res://textures/Rocks.png" id="2_l5glv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_leoo1"]
 radius = 8.544
 
 [node name="Area2D" type="Area2D" groups=["bullets"]]
 light_mask = 4
-script = ExtResource("1_qxw2w")
+script = ExtResource("1_y25gk")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.40331, 1.6709)
 scale = Vector2(0.486187, 0.410908)
-texture = ExtResource("2_6jt3u")
+texture = ExtResource("2_l5glv")
 region_enabled = true
 region_rect = Rect2(1, 1, 14, 13)
 
