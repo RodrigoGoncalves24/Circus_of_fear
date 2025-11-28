@@ -7,4 +7,5 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Crianca":  
+		Input.set_custom_mouse_cursor(load("res://textures/pointer_b_shaded.png"))
 		get_tree().change_scene_to_file("res://scenes/vitoria.tscn")

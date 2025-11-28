@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bpggd4gu6vkcn"]
 
-[ext_resource type="Script" uid="uid://dsw4nl466nfr8" path="res://scripts/gameover.gd" id="1_2mkfd"]
+[ext_resource type="Script" uid="uid://d0rghthiq4y62" path="res://scripts/gameover.gd" id="1_2mkfd"]
 [ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="1_v8l1s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dy3ie"]
@@ -67,7 +67,7 @@ _data = {
 &"victory animation": SubResource("Animation_dy3ie")
 }
 
-[node name="Game Over" type="Control"]
+[node name="Game Over" type="Control" groups=["Menus"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

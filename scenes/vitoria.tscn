@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cowun2fucccmm"]
 
-[ext_resource type="Script" uid="uid://cdc4cdqfs0kq2" path="res://scripts/vitoria.gd" id="1_3oowa"]
+[ext_resource type="Script" uid="uid://fo35i2jabv6q" path="res://scripts/vitoria.gd" id="1_3oowa"]
 [ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="1_5w2qk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3oowa"]
@@ -67,7 +67,7 @@ _data = {
 &"victory animation": SubResource("Animation_dy3ie")
 }
 
-[node name="Victory" type="Control"]
+[node name="Victory" type="Control" groups=["Menus"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

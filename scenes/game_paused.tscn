@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bh16hus80ht8e"]
 
-[ext_resource type="Script" uid="uid://g5rauilgmgs3" path="res://scripts/game_paused.gd" id="1_0acj3"]
+[ext_resource type="Script" uid="uid://cuood57ttybpm" path="res://scripts/game_paused.gd" id="1_0acj3"]
 [ext_resource type="Material" uid="uid://wdb4d5yld8nm" path="res://shaders/blur.tres" id="1_r1bre"]
 [ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="1_ukphe"]
 
@@ -29,7 +29,7 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[node name="Game_Paused" type="Control"]
+[node name="Game_Paused" type="Control" groups=["Menus"]]
 process_mode = 2
 layout_mode = 3
 anchors_preset = 15

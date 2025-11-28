@@ -21,12 +21,13 @@ Global="*res://scripts/global.gd"
 
 [display]
 
-mouse_cursor/custom_image="uid://db02bf87fphen"
+mouse_cursor/custom_image="uid://bbxw8lirh3ku0"
 
 [global_group]
 
 portas="Conjunto de portas"
 monstros=""
+Menus=""
 
 [input]
 

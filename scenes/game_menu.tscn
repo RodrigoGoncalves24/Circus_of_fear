@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://dvdyj3uieok3l"]
 
-[ext_resource type="FontFile" uid="uid://ffc4aeq3t0ga" path="res://textures/game_over.ttf" id="1_mw6r2"]
-[ext_resource type="Script" uid="uid://buhfsiuhn042s" path="res://scripts/game_menu.gd" id="1_vrsc2"]
+[ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="1_mw6r2"]
+[ext_resource type="Script" uid="uid://djnju2r1jbxhf" path="res://scripts/game_menu.gd" id="1_vrsc2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dy3ie"]
 font = ExtResource("1_mw6r2")
 font_size = 300
 font_color = Color(0.687741, 0.608287, 0.608044, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy3ie"]
-bg_color = Color(0.360346, 0.216548, 0.272245, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mkfd"]
+bg_color = Color(0.227066, 0.12725, 0.165135, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -21,14 +21,14 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mkfd"]
-bg_color = Color(0.227066, 0.12725, 0.165135, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy3ie"]
+bg_color = Color(0.360346, 0.216548, 0.272245, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[node name="Game_Menu" type="Control"]
+[node name="Game_Menu" type="Control" groups=["Menus"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,9 +65,9 @@ offset_bottom = 379.0
 theme_override_colors/font_color = Color(0.686275, 0.607843, 0.607843, 1)
 theme_override_fonts/font = ExtResource("1_mw6r2")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2mkfd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
 text = "Jogar"
 
 [node name="Controles" type="Button" parent="ColorRect"]
@@ -79,9 +79,9 @@ offset_bottom = 454.0
 theme_override_colors/font_color = Color(0.686275, 0.607843, 0.607843, 1)
 theme_override_fonts/font = ExtResource("1_mw6r2")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2mkfd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
 text = "Controles"
 
 [node name="Sair" type="Button" parent="ColorRect"]
@@ -93,9 +93,9 @@ offset_bottom = 531.0
 theme_override_colors/font_color = Color(0.686275, 0.607843, 0.607843, 1)
 theme_override_fonts/font = ExtResource("1_mw6r2")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2mkfd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h8i2o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dy3ie")
 text = "Sair"
 
 [connection signal="pressed" from="ColorRect/Jogar" to="." method="_on_jogar_pressed"]

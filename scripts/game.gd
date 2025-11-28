@@ -7,6 +7,8 @@ extends Node2D
 @onready var max_level : int = 4
 @onready var porta: StaticBody2D
 
+@onready var fear_bar : ProgressBar
+
 @export var monsters_count : int = 0
 @export var player_health : int = 5
 
@@ -14,12 +16,23 @@ func _ready() -> void:
 	var qtd_filhos = get_child_count()
 	level = get_child(qtd_filhos-1)
 	player = level.get_node("Crianca")
+	fear_bar = player.get_node("health_bar").get_node("FearBar")
 	tela_pause.hide()
 	if level.get_node("Cenario").has_node("Porta"):
 		porta = level.get_node("Cenario").get_node("Porta")
 	
 func _physics_process(delta: float) -> void:
+	if get_tree().current_scene.is_in_group("Menus"):
+		Input.set_custom_mouse_cursor(load("res://textures/pointer_b_shaded.png"))
+	else:
+		Input.set_custom_mouse_cursor(load("res://textures/target_b.png"))
+	
 	monsters_count = get_tree().get_nodes_in_group("monstros").size()
+	
+	if current_level == 3:
+		fear_bar.isWithBoss = true
+	else:
+		fear_bar.isWithBoss = false
 	
 	if porta and (monsters_count == 0 or Input.is_action_just_pressed("level_cleared")): 
 		porta.toggle_level_status(true)
@@ -55,8 +68,8 @@ func goto_scene(path: String):
 	world.free()
 	var new_scene : PackedScene = ResourceLoader.load(path)
 	level = new_scene.instantiate()
-	#get_tree().get_root().get_child(0).add_child(level)
 	add_child(level)
 	player = level.get_node("Crianca")
+	fear_bar = player.get_node("health_bar").get_node("FearBar")
 	if level.get_node("Cenario").has_node("Porta"):
 		porta = level.get_node("Cenario").get_node("Porta")

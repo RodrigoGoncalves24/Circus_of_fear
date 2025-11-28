@@ -111,5 +111,5 @@ func die():
 	print("O jogador morreu!")
 	som_morte.play()  
 	await som_morte.finished  
-	Input.set_custom_mouse_cursor(load("res://textures/pointer.png"))
+	Input.set_custom_mouse_cursor(load("res://textures/pointer_b_shaded.png"))
 	get_tree().change_scene_to_file("res://scenes/gameover.tscn")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://byhahyf15uv1j"]
 
-[ext_resource type="Script" uid="uid://de02xiivdsqvf" path="res://scripts/menu_controles.gd" id="1_n4rxx"]
+[ext_resource type="Script" uid="uid://b1bpp8cgwrefe" path="res://scripts/menu_controles.gd" id="1_n4rxx"]
 [ext_resource type="FontFile" uid="uid://cyuusg1liruco" path="res://textures/game_over.ttf" id="2_mj6fx"]
 [ext_resource type="Texture2D" uid="uid://bbro8dclq8hsn" path="res://textures/gdb-keyboard-2.png" id="3_711sx"]
 
@@ -188,7 +188,7 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="Controles" type="Control"]
+[node name="Controles" type="Control" groups=["Menus"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
