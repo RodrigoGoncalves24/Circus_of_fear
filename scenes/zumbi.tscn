@@ -1,10 +1,10 @@
 [gd_scene load_steps=24 format=3 uid="uid://7xxut8dm6l3j"]
 
-[ext_resource type="Script" uid="uid://cah07bn6t20vc" path="res://scripts/zumbi.gd" id="1_ijhqn"]
-[ext_resource type="Texture2D" uid="uid://etj0hmpkf0jk" path="res://textures/PIPOYA FREE RPG Character Sprites 32x32/Enemy/Enemy 04-1.png" id="2_qonaf"]
+[ext_resource type="Script" uid="uid://dqf8mvycqfbva" path="res://scripts/zumbi.gd" id="1_ijhqn"]
+[ext_resource type="Texture2D" uid="uid://uhn237hbh36v" path="res://textures/PIPOYA FREE RPG Character Sprites 32x32/Enemy/Enemy 04-1.png" id="2_qonaf"]
 [ext_resource type="PackedScene" uid="uid://bqslmhyyw4av2" path="res://scenes/hitbox.tscn" id="3_32ssj"]
-[ext_resource type="AudioStream" uid="uid://dc4dnviehefgr" path="res://sounds/som dano.wav" id="13_sqbqa"]
-[ext_resource type="AudioStream" uid="uid://b1pn160v2ilt3" path="res://sounds/som morte.wav" id="14_s8ybf"]
+[ext_resource type="AudioStream" uid="uid://b70umtkucbb01" path="res://sounds/som dano.wav" id="13_sqbqa"]
+[ext_resource type="AudioStream" uid="uid://cbwgo4mpsg0tf" path="res://sounds/som morte.wav" id="14_s8ybf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_srh2m"]
 atlas = ExtResource("2_qonaf")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://k1m70i51762q"]
+
+[ext_resource type="Script" uid="uid://bcc1kufk1tmds" path="res://scripts/coracao.gd" id="1_c0kj6"]
+[ext_resource type="Texture2D" uid="uid://bfypmaseeiy02" path="res://textures/hearts.png" id="1_i347t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c0kj6"]
+radius = 18.4391
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_c0kj6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -1)
+shape = SubResource("CircleShape2D_c0kj6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, 0)
+scale = Vector2(2.415, 2.415)
+texture = ExtResource("1_i347t")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)

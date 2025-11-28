@@ -1,13 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://cqojjxq21dxrt"]
+[gd_scene load_steps=8 format=4 uid="uid://cqojjxq21dxrt"]
 
 [ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://textures/tileset.tres" id="1_b3c0s"]
 [ext_resource type="PackedScene" uid="uid://bmdxft8utt8bc" path="res://scenes/porta.tscn" id="2_e11vc"]
 [ext_resource type="PackedScene" uid="uid://der53w3qs2ant" path="res://scenes/crianca.tscn" id="3_lug6k"]
-[ext_resource type="PackedScene" uid="uid://pigi6kmerpyx" path="res://scenes/chest.tscn" id="4_u7bi7"]
-[ext_resource type="Script" uid="uid://152h4obfqdmx" path="res://scripts/items/InventoryItem.gd" id="5_ty2me"]
-[ext_resource type="Resource" uid="uid://13ehaxgd4op2" path="res://scripts/items/ammo.tres" id="6_k2c7h"]
-[ext_resource type="Resource" uid="uid://vfoj7wg1cn7" path="res://scripts/items/key.tres" id="7_1l7qh"]
-[ext_resource type="Resource" uid="uid://d3l6i7t1fwwu3" path="res://scripts/items/heart.tres" id="8_oe8rc"]
+[ext_resource type="PackedScene" uid="uid://dpk3u6lxpb8kv" path="res://scenes/pedrinha.tscn" id="6_wo48x"]
+[ext_resource type="PackedScene" uid="uid://k1m70i51762q" path="res://scenes/coracao.tscn" id="6_y0kc7"]
 [ext_resource type="PackedScene" uid="uid://7xxut8dm6l3j" path="res://scenes/zumbi.tscn" id="9_ddg1o"]
 [ext_resource type="PackedScene" uid="uid://dkfbcc3tnpjlr" path="res://scenes/passagem.tscn" id="10_que50"]
 
@@ -43,31 +40,46 @@ collision_mask = 1
 [node name="Passagem" parent="Cenario" instance=ExtResource("10_que50")]
 position = Vector2(-3, 508)
 
-[node name="Chest" parent="Cenario" instance=ExtResource("4_u7bi7")]
-position = Vector2(169, 114.00001)
-scale = Vector2(1.5, 1.5)
-items = Dictionary[ExtResource("5_ty2me"), int]({
-null: 0,
-ExtResource("6_k2c7h"): 5,
-ExtResource("7_1l7qh"): 1,
-ExtResource("8_oe8rc"): 1
-})
-
 [node name="Crianca" parent="." instance=ExtResource("3_lug6k")]
-position = Vector2(29, 510.00003)
+position = Vector2(29, 510)
 scale = Vector2(0.75, 0.75)
 
 [node name="Camera2D" parent="Crianca" index="8"]
 limit_right = 1215
 
 [node name="Zumbi" parent="." groups=["monstros"] instance=ExtResource("9_ddg1o")]
-position = Vector2(494.00003, 615)
+position = Vector2(494, 615)
 
 [node name="Zumbi2" parent="." groups=["monstros"] instance=ExtResource("9_ddg1o")]
-position = Vector2(301, 118)
+position = Vector2(317, 155)
 
 [node name="Zumbi3" parent="." groups=["monstros"] instance=ExtResource("9_ddg1o")]
 position = Vector2(954, 142)
+
+[node name="vida" parent="." instance=ExtResource("6_y0kc7")]
+position = Vector2(1027, 97)
+scale = Vector2(0.806032, 0.8)
+
+[node name="pedrinha1" parent="." instance=ExtResource("6_wo48x")]
+position = Vector2(1068, 380)
+
+[node name="pedrinha2" parent="." instance=ExtResource("6_wo48x")]
+position = Vector2(1053, 359)
+
+[node name="pedrinha4" parent="." instance=ExtResource("6_wo48x")]
+position = Vector2(163, 113)
+
+[node name="pedrinha3" parent="." instance=ExtResource("6_wo48x")]
+position = Vector2(156, 134)
+
+[node name="pedrinha5" parent="." instance=ExtResource("6_wo48x")]
+position = Vector2(195, 133)
+
+[node name="pedrinha6" parent="." instance=ExtResource("6_wo48x")]
+position = Vector2(439, 620)
+
+[node name="pedrinha7" parent="." instance=ExtResource("6_wo48x")]
+position = Vector2(415, 632)
 
 [connection signal="body_entered" from="Cenario/Passagem" to="Cenario/Passagem" method="_on_body_entered"]
 

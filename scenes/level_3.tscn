@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=4 uid="uid://k2l5w7hgqqqq"]
+[gd_scene load_steps=8 format=4 uid="uid://k2l5w7hgqqqq"]
 
 [ext_resource type="TileSet" uid="uid://be5n3it30ufkb" path="res://textures/tileset.tres" id="1_h23n6"]
 [ext_resource type="PackedScene" uid="uid://bmdxft8utt8bc" path="res://scenes/porta.tscn" id="2_ha73p"]
 [ext_resource type="PackedScene" uid="uid://der53w3qs2ant" path="res://scenes/crianca.tscn" id="2_uwxec"]
 [ext_resource type="PackedScene" uid="uid://dtb3f30q5q38i" path="res://scenes/boss.tscn" id="4_1pn4d"]
 [ext_resource type="PackedScene" uid="uid://dkfbcc3tnpjlr" path="res://scenes/passagem.tscn" id="5_ah8om"]
+[ext_resource type="PackedScene" uid="uid://dpk3u6lxpb8kv" path="res://scenes/pedrinha.tscn" id="6_hhfj6"]
+[ext_resource type="PackedScene" uid="uid://k1m70i51762q" path="res://scenes/coracao.tscn" id="7_wae8j"]
 
 [node name="Level" type="Node"]
 process_mode = 1
@@ -37,7 +39,7 @@ scale = Vector2(2, 2)
 position = Vector2(-7, 511)
 
 [node name="Crianca" parent="." instance=ExtResource("2_uwxec")]
-position = Vector2(90, 509.00003)
+position = Vector2(90, 509)
 scale = Vector2(0.75, 0.75)
 
 [node name="Camera2D" parent="Crianca" index="8"]
@@ -46,6 +48,57 @@ limit_right = 1215
 [node name="Boss" parent="." groups=["monstros"] instance=ExtResource("4_1pn4d")]
 position = Vector2(651, 243)
 scale = Vector2(3, 3)
+
+[node name="pedrinha1" parent="." instance=ExtResource("6_hhfj6")]
+position = Vector2(1050, 78)
+
+[node name="pedrinha2" parent="." instance=ExtResource("6_hhfj6")]
+position = Vector2(1037, 86)
+
+[node name="pedrinha3" parent="." instance=ExtResource("6_hhfj6")]
+position = Vector2(1082, 84)
+
+[node name="pedrinha4" parent="." instance=ExtResource("6_hhfj6")]
+position = Vector2(1049, 98)
+
+[node name="pedrinha5" parent="." instance=ExtResource("6_hhfj6")]
+position = Vector2(1034, 471)
+
+[node name="pedrinha6" parent="." instance=ExtResource("6_hhfj6")]
+position = Vector2(838, 559)
+
+[node name="pedrinha7" parent="." instance=ExtResource("6_hhfj6")]
+position = Vector2(849, 573)
+
+[node name="pedrinha8" parent="." instance=ExtResource("6_hhfj6")]
+position = Vector2(1031, 486)
+
+[node name="pedrinha9" parent="." instance=ExtResource("6_hhfj6")]
+position = Vector2(152, 99)
+
+[node name="pedrinha10" parent="." instance=ExtResource("6_hhfj6")]
+position = Vector2(160, 85)
+
+[node name="pedrinha11" parent="." instance=ExtResource("6_hhfj6")]
+position = Vector2(137, 84)
+
+[node name="pedrinha12" parent="." instance=ExtResource("6_hhfj6")]
+position = Vector2(125, 309)
+
+[node name="pedrinha13" parent="." instance=ExtResource("6_hhfj6")]
+position = Vector2(447, 640)
+
+[node name="pedrinha14" parent="." instance=ExtResource("6_hhfj6")]
+position = Vector2(429, 646)
+
+[node name="coracao" parent="." instance=ExtResource("7_wae8j")]
+position = Vector2(402, 136)
+
+[node name="coracao2" parent="." instance=ExtResource("7_wae8j")]
+position = Vector2(381, 639)
+
+[node name="coracao3" parent="." instance=ExtResource("7_wae8j")]
+position = Vector2(1099, 646)
 
 [connection signal="body_entered" from="Cenario/Passagem" to="Cenario/Passagem" method="_on_body_entered"]
 

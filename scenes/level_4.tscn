@@ -36,7 +36,7 @@ position = Vector2(554, 180)
 scale = Vector2(1.5, 1.5)
 
 [node name="Crianca" parent="." instance=ExtResource("3_rr1tt")]
-position = Vector2(94, 187.00003)
+position = Vector2(94, 187)
 scale = Vector2(0.75, 0.75)
 
 [node name="ColorRect" parent="Crianca/AnimatedSprite2D" index="0"]

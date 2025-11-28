@@ -8,10 +8,9 @@
 script = ExtResource("1_hj2ta")
 
 [node name="BulletCount" type="Label" parent="."]
-offset_left = 102.0
-offset_top = 7.0
-offset_right = 142.0
-offset_bottom = 30.0
+offset_left = 100.0
+offset_right = 140.0
+offset_bottom = 35.0
 theme_override_fonts/font = ExtResource("2_ty45s")
 theme_override_font_sizes/font_size = 60
 text = ":5x"
